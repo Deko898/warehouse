@@ -72,6 +72,7 @@ export default function UserMenu() {
 
   return (
     <div>
+      asd
       {/* <IconButton onClick={handleClick} className={classes.menuButton}> */}
         {/* Dejan Obradovikj */}
         {/* <ArrowDropDownIcon /> */}
