@@ -8,7 +8,6 @@ import SideNavTree from "./SideNavTree";
 
 const StyledMenu = withStyles({
   paper: {
-    // border: '1px solid #d3d4d5',
   },
 })((props: MenuProps) => (
   <Menu
@@ -74,51 +73,17 @@ const CollapsedSideNavigation = () => {
     setAnchorEl(null);
   };
 
-  const ref = React.createRef();
   return (
     <div>
-      {/* {treeRoutes.map((t) => {
-        return (
-          <div>
-            <div
-              aria-controls={t.name}
-              aria-haspopup="true"
-              key={t.nodeId}
-              onClick={handleClick}
-            >
-              {t.name}
-            </div>
-            {t.children ? (
-              <StyledMenu
-                id={t.name}
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClick={handleClose}
-              >
-                <SideNavTree treeRoutes={t.children} />
-              </StyledMenu>
-            ) : null}
-          </div>
-        );
-      })} */}
       <Button
         aria-controls="customized-menu"
         aria-haspopup="true"
         variant="contained"
         color="primary"
         onMouseOver={handleClick}
-        // onMouseOut={handleClose}
       >
         M
       </Button>
-      {/* <StyledMenu
-        id="customized-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClick={handleClose}
-      > */}
       <Menu
         id="customized-menu"
         anchorEl={anchorEl}

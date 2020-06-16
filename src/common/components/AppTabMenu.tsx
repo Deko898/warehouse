@@ -61,7 +61,6 @@ interface IProps extends RouteComponentProps {
 
 const AppTabMenu = ({ items, parent, location }: IProps) => {
   const [last, ...paths] = location.pathname.split("/").reverse();
-  //   const match = paths.reverse().join("/");
   const match = "/orders/manage-orders";
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [open, setOpen] = React.useState<boolean>(false);

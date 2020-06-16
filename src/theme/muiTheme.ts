@@ -6,7 +6,6 @@ import { palette } from './palette';
 
 export const muiTheme = createMuiTheme({
     typography: {
-        // useNextVariants: true,
     },
     palette,
     shape: {

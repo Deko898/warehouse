@@ -3,7 +3,6 @@ import {
   Redirect,
   withRouter,
   RouteComponentProps,
-  Switch,
 } from "react-router-dom";
 import React from "react";
 import OrdersPipeline from "./OrdersPipeline";

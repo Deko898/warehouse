@@ -1,9 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
-import { makeStyles, Theme, createStyles, Icon } from "@material-ui/core";
-import { IconType } from "../enums/IconType.enum";
+import { makeStyles, Theme, createStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,11 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       "& h5": {
-        // marginLeft: "10px",
       },
-      // "& .MuiIcon-root": {
-      //   fontSize: "24px",
-      // },
     },
     root: {
       fontSize: "12px",
@@ -48,7 +42,6 @@ const AppBreadcrumbs: React.FunctionComponent<IProps> = ({ breadcrumbs }) => {
   return (
     <div className={classes.breadCrumbWrapper}>
       <div className={classes.iconWrapper}>
-        {/* <Icon className={IconType.ORDERS} /> */}
         <Typography color="textPrimary" variant="h5">
           {formatStringWithoutDash(last)}
         </Typography>

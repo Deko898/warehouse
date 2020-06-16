@@ -11,7 +11,6 @@ import React from "react";
 import FolderIcon from "@material-ui/icons/Folder";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
-// background: theme.palette.secondary.main,
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
