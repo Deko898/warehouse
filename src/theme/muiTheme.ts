@@ -10,7 +10,7 @@ export const muiTheme = createMuiTheme({
     },
     palette,
     shape: {
-        borderRadius: 8
+        borderRadius: 0
     },
     overrides: {
         MuiDrawer,
@@ -24,18 +24,71 @@ export const muiTheme = createMuiTheme({
         MuiTab: {
             root: {
                 minWidth: '72px !important',
-                borderTopLeftRadius: '4px',
-                borderTopRightRadius: '4px',
                 textTransform: 'capitalize',
                 fontWeight: 600,
                 color: '#6f8293',
                 "&$selected": {
-                    backgroundColor: palette.secondary.main,
-                    color: '#fff',
-                    borderBottom: 'none'
+                    backgroundColor: palette.background.default,
                 }
             },
-
+        },
+        MuiTableRow: {
+            head: {
+                backgroundColor: palette.secondary.dark,
+            }
+        },
+        MuiTableCell: {
+            head: {
+                color: "#fff",
+                '& .MuiCheckbox-root': {
+                    color: '#fff'
+                }
+            }
+        },
+        MuiTableSortLabel: {
+            root: {
+                "&:hover": {
+                    color: "#fff",
+                    opacity: '0.7'
+                }
+            },
+            active: {
+                color: "#fff !important"
+            },
+            icon: {
+                color: "#fff !important"
+            }
+        },
+        MuiListItem: {
+            root: {
+                '&$button': {
+                    '&:hover': {
+                        background: palette.primary.dark,
+                        '& *': {
+                            color: '#fff'
+                        },
+                    }
+                },
+                '&$selected': {
+                    background: palette.primary.main,
+                    '& *': {
+                        color: '#fff'
+                    },
+                    '&:hover': {
+                        background: `${palette.primary.main} !important`,
+                    }
+                },
+            },
+        },
+        MuiIcon: {
+            root: {
+                fontSize: '18px'
+            }
+        },
+        MuiTypography: {
+            body1: {
+                fontSize: '14px'
+            }
         }
     }
 },

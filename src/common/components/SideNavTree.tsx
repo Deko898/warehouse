@@ -179,7 +179,6 @@ interface IProps extends RouteComponentProps {
 }
 // FunctionComponent<RouteComponentProps<any, StaticContext, PoorMansUnknown>>
 const SideNavTree: React.FunctionComponent<IProps> = ({ treeRoutes }) => {
-  console.log(treeRoutes)
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState<string[]>(["3", "4"]);
   const [selected, setSelected] = React.useState<string[]>(["5"]);

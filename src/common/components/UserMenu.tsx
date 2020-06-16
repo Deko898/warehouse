@@ -49,7 +49,6 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles((theme) => ({
   root: {
-    // height: "0",
     "&:focus": {
       backgroundColor: theme.palette.secondary.light,
       "& .MuiListItemIcon-root, & .MuiListItemText-secondary": {
@@ -73,11 +72,12 @@ export default function UserMenu() {
 
   return (
     <div>
-      <IconButton onClick={handleClick} className={classes.menuButton}>
-        Dejan Obradovikj
-        <ArrowDropDownIcon />
-      </IconButton>
-      <StyledMenu
+      asd
+      {/* <IconButton onClick={handleClick} className={classes.menuButton}> */}
+        {/* Dejan Obradovikj */}
+        {/* <ArrowDropDownIcon /> */}
+      {/* </IconButton> */}
+      {/* <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
         keepMounted
@@ -93,7 +93,7 @@ export default function UserMenu() {
         <StyledMenuItem onClick={handleClose}>
           <ListItemText primary="Inbox" />
         </StyledMenuItem>
-      </StyledMenu>
+      </StyledMenu> */}
     </div>
   );
 }

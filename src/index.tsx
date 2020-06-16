@@ -6,6 +6,8 @@ import * as serviceWorker from "./serviceWorker";
 import { muiTheme } from "./theme/muiTheme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter } from "react-router-dom";
+import "font-awesome/css/font-awesome.css";
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 ReactDOM.render(
   <MuiThemeProvider theme={muiTheme}>
