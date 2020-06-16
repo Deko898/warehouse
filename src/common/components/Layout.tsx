@@ -20,7 +20,6 @@ import Avatar from "@material-ui/core/Avatar";
 import user from "../../assets/images/pic.jpg";
 import Filters from "./AppBarFilters";
 import { Route, Redirect } from "react-router-dom";
-import { createBrowserHistory } from "history";
 import Routes from "../../routes/AppRoutes";
 import NavigationBar from "./NavigationBar";
 import { useStyles } from "./LayoutStyles";
