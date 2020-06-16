@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import Routes from "../../routes/AppRoutes";
 import React from "react";
-import FolderIcon from "@material-ui/icons/Folder";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>

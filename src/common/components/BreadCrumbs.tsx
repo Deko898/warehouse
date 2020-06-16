@@ -27,10 +27,6 @@ interface IProps {
   breadcrumbs: string;
 }
 
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
 const AppBreadcrumbs: React.FunctionComponent<IProps> = ({ breadcrumbs }) => {
   const classes = useStyles();
   const breadcrumbsToArray = breadcrumbs.split("/").filter((c) => c);

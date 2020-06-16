@@ -46,13 +46,12 @@ export default function MiniDrawer(props: Props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-  const history = createBrowserHistory();
   return (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <img src="https://app.3linx.com/public/images/3linx-logo.png" />
+          <img src="https://app.3linx.com/public/images/3linx-logo.png" alt="3linx" />
           <IconButton
             color="inherit"
             aria-label="open drawer"
