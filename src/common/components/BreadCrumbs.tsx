@@ -2,10 +2,27 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
-import { makeStyles, Theme, createStyles } from "@material-ui/core";
+import { makeStyles, Theme, createStyles, Icon } from "@material-ui/core";
+import { IconType } from "../enums/IconType.enum";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    breadCrumbWrapper: {
+      textTransform: "capitalize",
+      display: "flex",
+      flexFlow: "column",
+      flexDirection: "column-reverse",
+    },
+    iconWrapper: {
+      display: "flex",
+      alignItems: "center",
+      "& h5": {
+        // marginLeft: "10px",
+      },
+      // "& .MuiIcon-root": {
+      //   fontSize: "24px",
+      // },
+    },
     root: {
       fontSize: "12px",
     },
@@ -25,16 +42,21 @@ const AppBreadcrumbs: React.FunctionComponent<IProps> = ({ breadcrumbs }) => {
   const breadcrumbsToArray = breadcrumbs.split("/").filter((c) => c);
   const [last] = breadcrumbsToArray.reverse();
   const crumbs = breadcrumbsToArray.filter((c) => c !== last).reverse();
-  console.log(crumbs);
+  const formatStringWithoutDash = (value: string): string => {
+    return value.replace("-", " ");
+  };
   return (
-    <div>
-      <Typography color="textPrimary" variant="h5">
-        {last}
-      </Typography>
+    <div className={classes.breadCrumbWrapper}>
+      <div className={classes.iconWrapper}>
+        {/* <Icon className={IconType.ORDERS} /> */}
+        <Typography color="textPrimary" variant="h5">
+          {formatStringWithoutDash(last)}
+        </Typography>
+      </div>
       <Breadcrumbs aria-label="breadcrumb">
         {crumbs.map((c) => (
           <Typography color="textSecondary" key={c} className={classes.root}>
-            {c}
+            {formatStringWithoutDash(c)}
           </Typography>
         ))}
       </Breadcrumbs>

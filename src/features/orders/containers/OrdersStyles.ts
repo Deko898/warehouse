@@ -13,16 +13,19 @@ const useOrdersStyles = makeStyles((theme: Theme) =>
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            marginBottom: "15px",
+            margin: theme.spacing(2, 0),
+        },
+        inputsContainer: {
+            display: "flex",
+            alignItems: "center"
         },
         exportBtn: {
             margin: theme.spacing(0, 2),
         },
-        boxSeparator: {
-            background: "#1d2226",
-            color: "#fff",
-            height: "40px",
-        },
+        chartWrapper: {
+            borderBottom: `1px dashed #cecece`,
+            padding: theme.spacing(2)
+        }
     })
 );
 

@@ -1,10 +1,12 @@
+import { palette } from "./palette";
+
 export const MuiTabs = {
     root: {
         '& .MuiTabs-flexContainer': {
             flexWrap: 'wrap'
         },
         "& .MuiTabs-indicator": {
-            backgroundColor: 'unset'
+            backgroundColor: palette.primary.main
         }
     },
 }
