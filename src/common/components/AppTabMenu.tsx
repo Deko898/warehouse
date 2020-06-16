@@ -5,7 +5,6 @@ import {
   Theme,
   makeStyles,
 } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Menu, { MenuProps } from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -60,7 +59,6 @@ interface IProps extends RouteComponentProps {
 }
 
 const AppTabMenu = ({ items, parent, location }: IProps) => {
-  const [last, ...paths] = location.pathname.split("/").reverse();
   const match = "/orders/manage-orders";
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [open, setOpen] = React.useState<boolean>(false);
