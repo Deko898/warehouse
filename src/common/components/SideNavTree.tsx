@@ -2,7 +2,6 @@ import React from "react";
 import {
   makeStyles,
   createStyles,
-  fade,
   Theme,
   withStyles,
 } from "@material-ui/core/styles";
@@ -16,7 +15,6 @@ import { ITreeRoute } from "./interfaces";
 
 const useTreeItemStyles = makeStyles((theme) => ({
   content: {
-    // flexDirection: "row-reverse",
   },
   labelRoot: {
     display: "flex",
@@ -177,7 +175,6 @@ const useStyles = makeStyles({
 interface IProps extends RouteComponentProps {
   treeRoutes: ITreeRoute[];
 }
-// FunctionComponent<RouteComponentProps<any, StaticContext, PoorMansUnknown>>
 const SideNavTree: React.FunctionComponent<IProps> = ({ treeRoutes }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState<string[]>(["3", "4"]);
@@ -194,7 +191,6 @@ const SideNavTree: React.FunctionComponent<IProps> = ({ treeRoutes }) => {
   const renderTree = (treeRoutes: ITreeRoute[]) => {
     return treeRoutes.map((t: ITreeRoute) => {
       return (
-        // t.children ? renderTree(t.children) :
         t.linkTo ? (
           <NavLink
             to={t.linkTo}

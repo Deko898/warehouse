@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Filters() {
   const classes = useStyles();
-  // const selectClasses = styles();
   const [age, setAge] = React.useState("10");
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {

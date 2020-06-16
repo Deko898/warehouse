@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const OrderLookup: React.FunctionComponent = () => {
   const classes = useStyles();
-  // const selectClasses = styles();
   const [age, setAge] = React.useState("10");
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
@@ -125,38 +124,26 @@ const OrderLookup: React.FunctionComponent = () => {
                 <MenuItem value={10}>All Ship Methods</MenuItem>
               </Select>
             </FormControl>
-            {/* <SearchIcon/> */}
-            {/* <FormControl
-            className={classes.formControl}
-            size="small"
-            defaultValue="2017-05-24"
-            color="secondary"
-            variant="outlined"
-          > */}
             <TextField
               id="date"
               label="Date Range"
               type="date"
               variant="outlined"
               defaultValue="2017-05-24"
-              // className={classes.textField}
               size="small"
               InputLabelProps={{
                 shrink: true,
               }}
             />
-            {/* </FormControl> */}
           </div>
 
           <Button
             variant="contained"
             color="primary"
-            // className={classes.exportBtn}
             startIcon={<SearchIcon />}
           >
             Show Results
           </Button>
-          {/* <IconButton> */}
         </form>
       </div>
       <MatTable />
@@ -165,40 +152,3 @@ const OrderLookup: React.FunctionComponent = () => {
 };
 
 export default OrderLookup;
-
-// import React from 'react';
-// import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-// import TextField from '@material-ui/core/TextField';
-
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     container: {
-//       display: 'flex',
-//       flexWrap: 'wrap',
-//     },
-//     textField: {
-//       marginLeft: theme.spacing(1),
-//       marginRight: theme.spacing(1),
-//       width: 200,
-//     },
-//   }),
-// );
-
-// export default function DatePickers() {
-//   const classes = useStyles();
-
-//   return (
-//     <form className={classes.container} noValidate>
-//       <TextField
-//         id="date"
-//         label="Birthday"
-//         type="date"
-//         defaultValue="2017-05-24"
-//         className={classes.textField}
-//         InputLabelProps={{
-//           shrink: true,
-//         }}
-//       />
-//     </form>
-//   );
-// }

@@ -49,20 +49,10 @@ const Orders: React.FunctionComponent<RouteComponentProps> = ({
           >
             Download
           </Button>
-          {/* <IconButton>
-
-          </IconButton> */}
-          {/* <TextField
-            label="Search"
-            color="secondary"
-            variant="outlined"
-            size="small"
-          /> */}
         </div>
       </div>
       <Card>
         <CardContent className={classes.root}>
-          {/* <div className={classes.chartWrapper}>Chart</div> */}
           <Route path={match.path}>
             {<Redirect to={`${match.path}/manage-orders`} />}
           </Route>

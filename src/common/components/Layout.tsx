@@ -18,7 +18,6 @@ import Hidden from "@material-ui/core/Hidden";
 import Fab from "@material-ui/core/Fab";
 import Avatar from "@material-ui/core/Avatar";
 import user from "../../assets/images/pic.jpg";
-import UserMenu from "./UserMenu";
 import Filters from "./AppBarFilters";
 import { Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -49,7 +48,6 @@ export default function MiniDrawer(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
   const history = createBrowserHistory();
   return (
-    // <Router history={history}>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -74,7 +72,6 @@ export default function MiniDrawer(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          {/* <i class="fas fa-power-off"></i> */}
         </Toolbar>
       </AppBar>
       <Hidden smUp implementation="css">
@@ -123,7 +120,6 @@ export default function MiniDrawer(props: Props) {
             <div className={classes.drawerToolbar}>
               <Avatar alt="D" src={user} />
               <div className={classes.userInfo}>
-                {/* <UserMenu /> */}
                 <div>Dejan Obradovikj</div>
                 <div className={classes.userJobTitle}>Frontend Developer</div>
               </div>
