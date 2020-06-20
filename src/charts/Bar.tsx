@@ -33,7 +33,7 @@ export default class BarChart extends React.PureComponent {
   render() {
     return (
       <Paper>
-        <Chart data={data}>
+        <Chart data={data} height={240}>
           <ArgumentAxis />
           <ValueAxis/>
 
