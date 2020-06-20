@@ -24,6 +24,10 @@ export const useStyles = makeStyles((theme: Theme) =>
         hide: {
             display: "none",
         },
+        filtersWrapper: {
+            display: "flex",
+            alignItems: "center"
+        },
         drawer: {
             whiteSpace: "nowrap",
             [theme.breakpoints.up("sm")]: {
@@ -103,7 +107,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
             padding: theme.spacing(0, 2),
             marginTop: "64px",
-            overflowX:'hidden'
+            overflowX: 'hidden'
         },
     })
 );
