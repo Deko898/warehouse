@@ -88,6 +88,12 @@ export const muiTheme = createMuiTheme({
             body1: {
                 fontSize: '14px'
             }
+        },
+        MuiList: {
+            padding: {
+                paddingTop: 0,
+                paddingBottom: 0,
+            }
         }
     }
 },

@@ -7,13 +7,16 @@ import {
 import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import { Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { orderPipelineRoutes, ordersRoutes } from "../routes/OrdersRoutes";
 import useOrderStyles from "./OrdersStyles";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs";
 import AddIcon from "@material-ui/icons/Add";
 import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 import { AppTabs } from "../../../common/components/AppTabs";
+import StyledMenuWithIcon from "../../../common/components/StyledMenuWithIcon";
+import { faCloudDownloadAlt } from "@fortawesome/free-solid-svg-icons";
+import BarChart from "../../../charts/Bar";
 
 const Orders: React.FunctionComponent<RouteComponentProps> = ({
   match,
@@ -36,18 +39,38 @@ const Orders: React.FunctionComponent<RouteComponentProps> = ({
       <div className={classes.breadCrumbsAndInputsContainer}>
         <AppBreadcrumbs breadcrumbs={breadcrumbs} />
         <div className={classes.inputsContainer}>
-          <Button variant="contained" color="primary" startIcon={<AddIcon />}>
-            Create
-          </Button>
           <Button
             variant="contained"
-            color="secondary"
-            className={classes.exportBtn}
-            startIcon={<CloudDownloadIcon />}
+            color="primary"
+            startIcon={<AddIcon />}
+            className={classes.createBtn}
           >
-            Download
+            Create
           </Button>
+          <StyledMenuWithIcon
+            variant="contained"
+            color="secondary"
+            icon={faCloudDownloadAlt}
+            items={[{ text: "Export CSV" }]}
+            text="Download"
+          />
         </div>
+      </div>
+      <div className={classes.chartWrapper}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={3}>
+            <BarChart />
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <BarChart />
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <BarChart />
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <BarChart />
+          </Grid>
+        </Grid>
       </div>
       <Card>
         <CardContent className={classes.root}>

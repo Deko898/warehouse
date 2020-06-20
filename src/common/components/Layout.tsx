@@ -24,6 +24,8 @@ import Routes from "../../routes/AppRoutes";
 import NavigationBar from "./NavigationBar";
 import { useStyles } from "./LayoutStyles";
 import { useTheme } from "@material-ui/core/styles";
+import StyledMenuWithIcon from "./StyledMenuWithIcon";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   window?: () => Window;
@@ -50,7 +52,10 @@ export default function MiniDrawer(props: Props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <img src="https://app.3linx.com/public/images/3linx-logo.png" alt="3linx" />
+          <img
+            src="https://app.3linx.com/public/images/3linx-logo.png"
+            alt="3linx"
+          />
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -60,16 +65,13 @@ export default function MiniDrawer(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Filters />
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggleSm}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+          <div className={classes.filtersWrapper}>
+            <Filters />
+            <StyledMenuWithIcon
+              icon={faPowerOff}
+              items={[{ text: "Logout" }, { text: "Profile" }]}
+            />
+          </div>
         </Toolbar>
       </AppBar>
       <Hidden smUp implementation="css">

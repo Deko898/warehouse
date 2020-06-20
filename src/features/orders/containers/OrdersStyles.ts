@@ -19,12 +19,13 @@ const useOrdersStyles = makeStyles((theme: Theme) =>
             display: "flex",
             alignItems: "center"
         },
-        exportBtn: {
+        createBtn: {
             margin: theme.spacing(0, 2),
         },
         chartWrapper: {
-            borderBottom: `1px dashed #cecece`,
-            padding: theme.spacing(2)
+            // borderBottom: `1px dashed #cecece`,
+            paddingBottom: theme.spacing(2),
+            // height: "350px"
         }
     })
 );
