@@ -57,16 +57,16 @@ const Orders: React.FunctionComponent<RouteComponentProps> = ({
       </div>
       <div className={classes.chartWrapper}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <BarChart />
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <BarChart />
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <BarChart />
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <BarChart />
           </Grid>
         </Grid>

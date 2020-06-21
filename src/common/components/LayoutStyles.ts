@@ -107,7 +107,10 @@ export const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
             padding: theme.spacing(0, 2),
             marginTop: "64px",
-            overflowX: 'hidden'
+            overflowX: 'hidden',
+            [theme.breakpoints.down("xs")]: {
+                marginTop: "112px",
+            },
         },
     })
 );

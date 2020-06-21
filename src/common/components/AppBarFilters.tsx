@@ -8,19 +8,14 @@ import Select from "@material-ui/core/Select";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      "& > *": {
-        margin: theme.spacing(1),
-        width: "25ch",
+      display: "inline-flex",
+      [theme.breakpoints.down("xs")]: {
+        flexFlow: "column",
       },
-
-      '& .MuiListItem-root': {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "400px",
-      }
     },
     formControl: {
       margin: theme.spacing(1),
+      width: "25ch",
     },
   })
 );
