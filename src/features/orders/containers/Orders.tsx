@@ -12,7 +12,6 @@ import { orderPipelineRoutes, ordersRoutes } from "../routes/OrdersRoutes";
 import useOrderStyles from "./OrdersStyles";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs";
 import AddIcon from "@material-ui/icons/Add";
-import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 import { AppTabs } from "../../../common/components/AppTabs";
 import StyledMenuWithIcon from "../../../common/components/StyledMenuWithIcon";
 import { faCloudDownloadAlt } from "@fortawesome/free-solid-svg-icons";

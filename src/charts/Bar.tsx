@@ -19,7 +19,6 @@ const data: any[] = [
   { year: "2000", population: 6.127 },
   { year: "2010", population: 6.93 },
 ];
-const max = 7;
 
 export default class BarChart extends React.PureComponent {
   constructor(props: any) {
