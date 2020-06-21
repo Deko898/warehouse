@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) =>
     uploadContent: {
       padding: '10px'
     },
+    mLeft: {
+      marginLeft: '10px'
+    },
     button: {
       textTransform: 'none',
     },
@@ -28,18 +31,19 @@ const useStyles = makeStyles((theme: Theme) =>
     <Paper>
        <div className={classes.uploadContainer}>
          <div className={classes.uploadContent}>
-         <span style={{fontWeight: 'bold'}}>File upload</span>
-         <span style={{marginLeft: '10px'}}>
+         <i className="fa fa-folder" aria-hidden="true"></i>
+         <span style={{fontWeight: 'bold'}} className={classes.mLeft}>File upload</span>
+         <span className={classes.mLeft}>
            Upload a batch file of Orders. ( Excel (xls,xlsx,csv) Format Only)</span>
          </div>
-       <div className={classes.uploadContent}>
+       <div className={[classes.uploadContent, classes.mLeft].join(" ")}>
        <input
-        accept="image/*"
         id="contained-input-file"
         type="file"
+        accept=".xls,.xlsx,.csv"
       />
     <input
-        accept="image/*"
+        accept=".xls,.xlsx,.csv"
         className={classes.input}
         id="contained-button-file"
         type="file"
@@ -47,15 +51,19 @@ const useStyles = makeStyles((theme: Theme) =>
       <label htmlFor="contained-button-file">
         <Button 
         size="small"
-        variant="contained" component="span" className={classes.button}>
+        color="primary"
+        variant="contained" component="span" className={classes.button}
+        startIcon={<i className="fa fa-upload" aria-hidden="true"></i>}
+        >
           Upload
         </Button>
       </label>
        </div>
 
-    <div className={classes.uploadContent}>
+    <div className={[classes.uploadContent, classes.mLeft].join(" ")}>
       <Link to="">
-      Download: Orders Templete.xlsx
+      <i className="fa fa-folder" aria-hidden="true"></i>
+      <span className={classes.mLeft}>Download: Orders Templete.xlsx</span>
       </Link>
     </div>
     </div>
