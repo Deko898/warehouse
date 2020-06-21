@@ -7,15 +7,15 @@ import {
 import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import { Button, Grid } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { orderPipelineRoutes, ordersRoutes } from "../routes/OrdersRoutes";
 import useOrderStyles from "./OrdersStyles";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs";
 import AddIcon from "@material-ui/icons/Add";
-import { AppTabs } from "../../../common/components/AppTabs";
+import AppTabs from "../../../common/components/AppTabs";
 import StyledMenuWithIcon from "../../../common/components/StyledMenuWithIcon";
 import { faCloudDownloadAlt } from "@fortawesome/free-solid-svg-icons";
-import BarChart from "../../../charts/Bar";
+import OrderDetails from "./OrderDetails";
 
 const Orders: React.FunctionComponent<RouteComponentProps> = ({
   match,
@@ -55,36 +55,17 @@ const Orders: React.FunctionComponent<RouteComponentProps> = ({
           />
         </div>
       </div>
-      <div className={classes.chartWrapper}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
-          </Grid>
-        </Grid>
-      </div>
-      <Card>
-        <CardContent className={classes.root}>
-          <Route path={match.path}>
-            {<Redirect to={`${match.path}/manage-orders`} />}
-          </Route>
-          {ordersRoutes.map((route: any) => (
-            <Route
-              path={`${match.path}${route.path}`}
-              key={route.path}
-              component={route.component}
-            />
-          ))}
-        </CardContent>
-      </Card>
+      <Route path={match.path} exact>
+        {<Redirect to={`${match.path}/manage-orders`} />}
+      </Route>
+      {ordersRoutes.map((route: any) => (
+        <Route
+          path={`${match.path}${route.path}`}
+          key={route.path}
+          component={route.component}
+        />
+      ))}
+      <Route path={"/orders/details/:orderId"} component={OrderDetails} />
     </div>
   );
 };

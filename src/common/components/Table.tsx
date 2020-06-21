@@ -11,6 +11,7 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Icon } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 interface Data {
   systemId: string;
@@ -161,7 +162,7 @@ const headCells: HeadCell[] = [
   {
     id: "systemId",
     numeric: false,
-    disablePadding: true,
+    disablePadding: false,
     label: "Sys",
   },
   { id: "orderNumber", numeric: true, disablePadding: false, label: "Order" },
@@ -184,8 +185,8 @@ const headCells: HeadCell[] = [
     disablePadding: false,
     label: "Complete By",
   },
-  { id: "status", numeric: true, disablePadding: false, label: "Status" },
-  { id: "action", numeric: true, disablePadding: false, label: "Action" },
+  { id: "status", numeric: false, disablePadding: false, label: "Status" },
+  { id: "action", numeric: false, disablePadding: false, label: "Action" },
 ];
 
 interface EnhancedTableProps {
@@ -232,7 +233,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? "right" : "left"}
             padding={headCell.disablePadding ? "none" : "default"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -390,8 +390,12 @@ export default function MatTable() {
                         id={labelId}
                         scope="row"
                         padding="none"
+                        // to={`/manage-orders/order-pipeline/picking`}
+                        // component={Link}
                       >
-                        {row.systemId}
+                        <Link to={`/orders/details/${row.systemId}`}>
+                          {row.systemId}
+                        </Link>
                       </TableCell>
                       <TableCell>
                         {/* <i class="fas fa-file-excel"></i> */}
