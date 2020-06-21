@@ -10,6 +10,8 @@ import ReadyToShip from "../containers/ReadyToShip/ReadyToShip";
 import ManageOrders from "../containers/ManageOrders";
 import OrdersPipeline from "../containers/OrdersPipeline";
 import CreateOrder from "../containers/CreateOrder";
+import FileUpload from '../containers/FileUpload/FileUpload';
+import WebForm from "../containers/WebForm/WebForm";
 
 const ordersRoutes = [
   {
@@ -138,4 +140,9 @@ const orderPipelineRoutes = [
   },
 ];
 
-export { ordersRoutes, orderPipelineRoutes };
+const orderCreateRoutes = [
+  { name: "Web Form", path: "/form", activeIndex: 1, component: WebForm },
+  { name: "File Upload", path: "/upload", activeIndex: 2, component: FileUpload },
+]
+
+export { ordersRoutes, orderPipelineRoutes, orderCreateRoutes };

@@ -38,7 +38,7 @@ export default class BarChart extends React.PureComponent {
           <ValueAxis/>
 
           <BarSeries valueField="population" argumentField="year" />
-          <Title text="World population" />
+          <Title text="Orders Chronological" />
           <Animation />
         </Chart>
       </Paper>

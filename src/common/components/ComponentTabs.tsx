@@ -20,7 +20,6 @@ const TabContent: React.FunctionComponent<{ name: string }> = ({ name }) => {
   return (
     <div>
       <div>{name}</div>
-      <div className={classes.itemCount}>0</div>
     </div>
   );
 };
