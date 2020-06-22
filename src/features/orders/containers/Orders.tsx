@@ -5,68 +5,19 @@ import {
   withRouter,
 } from "react-router-dom";
 import React from "react";
-import { Button, Hidden } from "@material-ui/core";
-import { orderPipelineRoutes, ordersRoutes } from "../routes/OrdersRoutes";
+import { ordersRoutes } from "../routes/OrdersRoutes";
 import useOrderStyles from "./OrdersStyles";
-import AppBreadcrumbs from "../../../common/components/BreadCrumbs";
-import AddIcon from "@material-ui/icons/Add";
 import AppTabs from "../../../common/components/AppTabs";
-import StyledMenuWithIcon from "../../../common/components/StyledMenuWithIcon";
-import {
-  faCloudDownloadAlt,
-  faEllipsisV,
-} from "@fortawesome/free-solid-svg-icons";
 import OrderDetails from "./OrderDetails";
 
 const Orders: React.FunctionComponent<RouteComponentProps> = ({
   match,
-  location,
 }) => {
   const classes = useOrderStyles();
-  const mapOrdersPipelineRoutes = orderPipelineRoutes.map((r) => r.path);
-  const exist = mapOrdersPipelineRoutes.find((p) =>
-    location.pathname.includes(p)
-  );
-  let breadcrumbs = location.pathname;
-  if (exist) {
-    const lp = location.pathname.split("/");
-    lp.splice(lp.length - 1, 1);
-    breadcrumbs = lp.join("/");
-  }
+
   return (
     <div className={classes.ordersPiplineContainer}>
       <AppTabs routes={ordersRoutes} />
-      <div className={classes.breadCrumbsAndInputsContainer}>
-        <AppBreadcrumbs breadcrumbs={breadcrumbs} />
-        <Hidden smUp implementation="css">
-          <div className={classes.smallMenuVertical}>
-            <StyledMenuWithIcon
-              color="secondary"
-              icon={faEllipsisV}
-              items={[{ text: "Create" }, { text: "Export CSV" }]}
-            />
-          </div>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <div className={classes.inputsContainer}>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AddIcon />}
-              className={classes.createBtn}
-            >
-              Create
-            </Button>
-            <StyledMenuWithIcon
-              variant="contained"
-              color="secondary"
-              icon={faCloudDownloadAlt}
-              items={[{ text: "Export CSV" }]}
-              text="Download"
-            />
-          </div>
-        </Hidden>
-      </div>
       <Route path={match.path} exact>
         {<Redirect to={`${match.path}/manage-orders`} />}
       </Route>

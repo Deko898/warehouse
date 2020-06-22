@@ -94,6 +94,19 @@ export const muiTheme = createMuiTheme({
                 paddingTop: 0,
                 paddingBottom: 0,
             }
+        },
+        MuiCardHeader: {
+            root: {
+                background: palette.secondary.dark,
+                color: palette.secondary.contrastText,
+                padding: '8px 16px'
+            },
+            title: {
+                fontSize: '18px'
+            },
+            subheader: {
+                color: palette.secondary.contrastText
+            }
         }
     }
 },
