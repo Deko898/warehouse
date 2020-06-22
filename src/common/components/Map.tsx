@@ -2,12 +2,9 @@ import React from "react";
 import {
   Map,
   TileLayer,
-  Circle,
   CircleMarker,
   Popup,
   Polyline,
-  Polygon,
-  Marker,
   Viewport,
 } from "react-leaflet";
 import * as Leaflet from "leaflet";
@@ -30,9 +27,6 @@ const polyline: Leaflet.LatLngExpression[] = [
   [51.51, -0.1],
   [51.51, -0.12],
 ];
-
-
-const position: Leaflet.LatLngExpression = [51.505, -0.09];
 
 const viewport: Viewport = {
   center,

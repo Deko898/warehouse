@@ -15,6 +15,16 @@ const useOrdersStyles = makeStyles((theme: Theme) =>
             alignItems: "center",
             margin: theme.spacing(2, 0),
         },
+        smallMenuVertical: {
+            '& .MuiButtonBase-root': {
+                minWidth: 'unset',
+                padding: '0px !important',
+                '& .MuiButton-startIcon': {
+                    marginLeft: 0,
+                    marginRight: 0
+                }
+            }
+        },
         inputsContainer: {
             display: "flex",
             alignItems: "center"
@@ -23,11 +33,8 @@ const useOrdersStyles = makeStyles((theme: Theme) =>
             margin: theme.spacing(0, 2),
         },
         chartWrapper: {
-            // borderBottom: `1px dashed #cecece`,
             paddingBottom: theme.spacing(2),
-            // height: "350px"
         }
     })
 );
-
 export default useOrdersStyles;

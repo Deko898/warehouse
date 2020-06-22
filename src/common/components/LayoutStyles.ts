@@ -14,6 +14,14 @@ export const useStyles = makeStyles((theme: Theme) =>
         },
         appBar: {
             zIndex: theme.zIndex.drawer + 1,
+            '& .MuiButtonBase-root': {
+                minWidth: 'unset',
+                padding: '0px !important',
+                '& .MuiButton-startIcon': {
+                    marginLeft: theme.spacing(1),
+                    marginRight: 0
+                }
+            }
         },
         menuButton: {
             marginRight: theme.spacing(2),

@@ -12,7 +12,6 @@ import OrdersPipeline from "../containers/OrdersPipeline";
 import CreateOrder from "../containers/CreateOrder";
 import FileUpload from '../containers/FileUpload/FileUpload';
 import WebForm from "../containers/WebForm/WebForm";
-import OrderDetails from "../containers/OrderDetails";
 
 const ordersRoutes = [
   {
