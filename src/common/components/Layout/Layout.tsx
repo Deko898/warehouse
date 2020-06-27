@@ -87,7 +87,7 @@ export default function MiniDrawer(props: Props) {
             paper: classes.drawer,
           }}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
         >
           <div className={classes.drawerToolbar}>

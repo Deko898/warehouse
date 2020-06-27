@@ -297,7 +297,6 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
   );
 };
 
-// Make data available on props
 const mapStateToProps = ({ orderDetailsState }: IAppState) => {
   return {
     orderDetails: orderDetailsState.orderDetails,
@@ -305,7 +304,6 @@ const mapStateToProps = ({ orderDetailsState }: IAppState) => {
   };
 };
 
-// Make functions available on props
 const mapDispatchToProps = (dispatch: any) => {
   return {
     fetchOrderDetails: (systemId: string) => {
@@ -316,5 +314,4 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
-// Connect the app aware container to the store and reducers
 export default connect(mapStateToProps, mapDispatchToProps)(OrderDetails);

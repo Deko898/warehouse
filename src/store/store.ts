@@ -1,4 +1,3 @@
-// Third-Party dependencies
 import {
     applyMiddleware,
     combineReducers,
@@ -14,7 +13,6 @@ import { orderDetailsSagas } from './modules/order-details/sagas';
 import ordersReducers from './modules/orders/reducers';
 import orderDetailsReducers from './modules/order-details/reducers';
 
-// Create the root reducer
 const rootReducer = combineReducers<IAppState>({
     ordersState: ordersReducers,
     orderDetailsState: orderDetailsReducers
@@ -30,7 +28,6 @@ function* rootSaga() {
     ])
 }
 
-// Create a configure store function of type `IAppState`
 export default function configureStore(): Store<IAppState, any> {
     const store = createStore(
         rootReducer,

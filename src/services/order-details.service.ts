@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { IOrderDetails } from '../models';
 import { ORDER_DETAILS_MOCK } from '../mock/order-details.mock';
 

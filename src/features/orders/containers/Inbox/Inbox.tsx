@@ -103,7 +103,6 @@ export const Inbox: React.FunctionComponent<IProps> = ({
   );
 };
 
-// Make data available on props
 const mapStateToProps = ({ ordersState }: IAppState) => {
   return {
     orders: ordersState.orders,
@@ -111,12 +110,10 @@ const mapStateToProps = ({ ordersState }: IAppState) => {
   };
 };
 
-// Make functions available on props
 const mapDispatchToProps = (dispatch: any) => {
   return {
     fetchOrders: () => dispatch(fetchOrdersRequestAction({ isLoading: true })),
   };
 };
 
-// Connect the app aware container to the store and reducers
 export default connect(mapStateToProps, mapDispatchToProps)(Inbox);
