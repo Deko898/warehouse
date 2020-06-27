@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Paper from "@material-ui/core/Paper";
 import {
   Chart,
@@ -20,27 +20,15 @@ const data: any[] = [
   { year: "2010", population: 6.93 },
 ];
 
-export default class BarChart extends React.PureComponent {
-  constructor(props: any) {
-    super(props);
+export const BarChart: React.FunctionComponent = () => (
+  <Paper>
+    <Chart data={data} height={240}>
+      <ArgumentAxis />
+      <ValueAxis />
 
-    this.state = {
-      data,
-    };
-  }
-
-  render() {
-    return (
-      <Paper>
-        <Chart data={data} height={240}>
-          <ArgumentAxis />
-          <ValueAxis/>
-
-          <BarSeries valueField="population" argumentField="year" />
-          <Title text="Orders Chronological" />
-          <Animation />
-        </Chart>
-      </Paper>
-    );
-  }
-}
+      <BarSeries valueField="population" argumentField="year" />
+      <Title text="Orders Chronological" />
+      <Animation />
+    </Chart>
+  </Paper>
+);

@@ -7,7 +7,7 @@ import {
 import React from "react";
 import OrdersPipeline from "./OrdersPipeline";
 import CreateOrder from "./CreateOrder";
-import OrderLookup from "./OrderLookup";
+import OrderLookup from "./OrderLookup/OrderLookup";
 
 const ManageOrders: React.FunctionComponent<RouteComponentProps> = ({
   match,

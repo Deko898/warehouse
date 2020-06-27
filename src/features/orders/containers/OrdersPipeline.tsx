@@ -5,23 +5,26 @@ import {
   RouteComponentProps,
 } from "react-router-dom";
 import React from "react";
-import ComponentTabs from "../../../common/components/ComponentTabs";
+import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";
 import { orderPipelineRoutes } from "../routes/OrdersRoutes";
 import { Grid, Card, CardContent } from "@material-ui/core";
-import BarChart from "../../../charts/Bar";
+import { BarChart } from "../../../charts/Bar";
+import { PieChart } from "../../../charts/Pie";
+import { DoughnutChart } from "../../../charts/Doughnut";
+import { SideBySideStacked } from "../../../charts/SideBySideStackedBar";
 import useOrderStyles from "./OrdersStyles";
-import StyledMenuWithIcon from "../../../common/components/StyledMenuWithIcon";
+import StyledMenuWithIcon from "../../../common/components/Sidenav/StyledMenuWithIcon";
 import {
   faCloudDownloadAlt,
   faEllipsisV,
 } from "@fortawesome/free-solid-svg-icons";
-import AppBreadcrumbs from "../../../common/components/BreadCrumbs";
+import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import AddIcon from "@material-ui/icons/Add";
 import { Button, Hidden } from "@material-ui/core";
 
 const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
   match,
-  location
+  location,
 }) => {
   const classes = useOrderStyles();
   const mapOrdersPipelineRoutes = orderPipelineRoutes.map((r) => r.path);
@@ -34,6 +37,7 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
     lp.splice(lp.length - 1, 1);
     breadcrumbs = lp.join("/");
   }
+  console.log(orderPipelineRoutes,'routes orderPipelineRoutes')
   return (
     <div>
       <div className={classes.breadCrumbsAndInputsContainer}>
@@ -73,19 +77,23 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
             <BarChart />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
+            <PieChart />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
+            <SideBySideStacked />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
+            <DoughnutChart />
           </Grid>
         </Grid>
       </div>
       <Card>
         <CardContent className={classes.root}>
-          <ComponentTabs routes={orderPipelineRoutes} />
+          <ComponentTabs
+            routes={orderPipelineRoutes}
+            showExtraInfo={true}
+            withDivider={false}
+          />
           <Route path={match.path}>
             {<Redirect to={`${match.path}/inbox`} />}
           </Route>

@@ -8,5 +8,5 @@ export enum IconType {
     INSIGHTS = "fa fa-chart-area",
     FINANCE = "fa fa-money-bill-alt",
     CONFIG = "fa fa-cog",
-    LOGOUT = "fas fa-power-off"
+    LOGOUT = "fa fa-power-off"
 }

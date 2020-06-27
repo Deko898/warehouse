@@ -7,8 +7,8 @@ import {
 import React from "react";
 import { ordersRoutes } from "../routes/OrdersRoutes";
 import useOrderStyles from "./OrdersStyles";
-import AppTabs from "../../../common/components/AppTabs";
-import OrderDetails from "./OrderDetails";
+import AppTabs from "../../../common/components/AppBar/AppTabs";
+import OrderDetails from "./OrderDetails/OrderDetails";
 
 const Orders: React.FunctionComponent<RouteComponentProps> = ({
   match,
