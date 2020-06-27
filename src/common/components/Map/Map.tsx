@@ -19,13 +19,6 @@ let DefaultIcon = Leaflet.icon({
 
 Leaflet.Marker.prototype.options.icon = DefaultIcon;
 
-const center: [number, number] = [51.505, -0.09];
-
-const viewport: Viewport = {
-  center,
-  zoom: 13,
-};
-
 interface IPosition {
   coordinates: [number, number];
   color: string;
@@ -35,19 +28,31 @@ interface IProps {
   positions: IPosition[];
 }
 
-const LeafletMap = ({
-  polyline,
-  positions,
-}: IProps) => {
+const LeafletMap = ({ polyline, positions }: IProps) => {
   const classes = useStyles();
+  const center = polyline[0] as [number, number];
+  const viewport: Viewport = {
+    center,
+    zoom: 8,
+  };
+  const bounds: any = [polyline[0], polyline[2]];
   return (
-    <Map viewport={viewport} className={classes.mapRoot}>
+    <Map
+      className={classes.mapRoot}
+      bounds={bounds}
+      boundsOptions={{ padding: [50, 50] }}
+    >
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {positions.map((p,index) => (
-        <CircleMarker key={index} center={p.coordinates} color={p.color} radius={10} />
+      {positions.map((p, index) => (
+        <CircleMarker
+          key={index}
+          center={p.coordinates}
+          color={p.color}
+          radius={10}
+        />
       ))}
       <Polyline color="#21262b" positions={polyline} />
     </Map>

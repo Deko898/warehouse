@@ -5,7 +5,6 @@ import { RequestOrderDetails } from './actions.interface';
 import { fetchOrderDetailsRequestSuccessAction, fetchOrderDetailsRequestFailureAction } from './actions';
 
 export function* fetchOrderDetailsSaga({ payload }: RequestOrderDetails) {
-    console.log(payload,'PPPPPPPPPPPPPPPPP')
     try {
         const orderDetails = yield call(orderDetailsService.fetchOrderDetails, payload.systemId);
         yield put(fetchOrderDetailsRequestSuccessAction({

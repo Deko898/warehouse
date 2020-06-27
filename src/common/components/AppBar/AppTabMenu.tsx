@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  withStyles,
-} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Menu, { MenuProps } from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -37,7 +35,7 @@ interface IProps extends RouteComponentProps {
   parent: any;
 }
 
-const AppTabMenu = ({ items, parent, location }: IProps) => {
+const AppTabMenu = ({ items, parent, location, match:m }: IProps) => {
   const match = "/orders/manage-orders";
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [open, setOpen] = React.useState<boolean>(false);
@@ -82,7 +80,11 @@ const AppTabMenu = ({ items, parent, location }: IProps) => {
               style={{ textDecoration: "none" }}
               key={i.path}
             >
-              <MenuItem className={classes.gutters} selected={activeRoute(i.path)} onClick={handleClose}>
+              <MenuItem
+                className={classes.gutters}
+                selected={activeRoute(i.path)}
+                onClick={handleClose}
+              >
                 <ListItemText primary={i.name} />
               </MenuItem>
             </NavLink>

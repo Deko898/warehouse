@@ -337,14 +337,14 @@ export const ORDER_DETAILS_MOCK: any = {
                 color: "blue",
             },
             {
-                coordinates: [49.51, -0.12],
+                coordinates: [49.21, -0.12],
                 color: "#238383",
             },
         ],
         orderPath: [
             [48.505, -0.09],
-            [50.51, -0.1],
-            [49.51, -0.12],
+            [49.61, 1.46],
+            [49.21, -0.12],
         ]
     }
 }
