@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  withStyles,
-} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Menu, { MenuProps } from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -40,13 +38,13 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-
 interface IProps {
   color?: any;
   variant?: any;
   icon: any;
   items: any[];
   text?: string;
+  handleItemClick: Function;
 }
 
 export default function StyledMenuWithIcon({
@@ -55,6 +53,7 @@ export default function StyledMenuWithIcon({
   icon,
   items,
   text,
+  handleItemClick,
 }: IProps) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -86,7 +85,7 @@ export default function StyledMenuWithIcon({
         onClose={handleClose}
       >
         {items.map((item) => (
-          <StyledMenuItem key={item.text}>
+          <StyledMenuItem key={item.text} onClick={(e) => handleItemClick(item.text)}>
             <ListItemText primary={item.text} />
           </StyledMenuItem>
         ))}

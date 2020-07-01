@@ -15,5 +15,17 @@ export default createReducer<IAuthState, Actions>(initialState, {
     [Types.REQUEST_LOGIN_FAILURE]: (state, action) => ({
         ...state,
         ...action.payload
+    }),
+    [Types.REQUEST_LOGOUT]: (state, action) => ({
+        ...state,
+        ...action.payload
+    }),
+    [Types.REQUEST_LOGOUT_SUCCESS]: (state, action) => ({
+        ...state,
+        ...action.payload
+    }),
+    [Types.REQUEST_LOGOUT_FAILURE]: (state, action) => ({
+        ...state,
+        ...action.payload
     })
 })

@@ -10,7 +10,7 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             }
         },
         imgWrapper: {
-            backgroundImage: `url('https://seantheme.com/color-admin/admin/assets/img/login-bg/login-bg-11.jpg')`,
+            backgroundImage: `url('http://seantheme.com/color-admin/admin/assets/img/login-bg/login-bg-11.jpg')`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',

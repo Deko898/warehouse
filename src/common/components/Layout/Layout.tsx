@@ -1,39 +1,32 @@
 import React from "react";
 import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Hidden from "@material-ui/core/Hidden";
 import Fab from "@material-ui/core/Fab";
 import Avatar from "@material-ui/core/Avatar";
-import user from "../../../assets/images/pic.jpg";
-import Filters from "../AppBar/AppBarFilters";
 import { Route, Redirect, Switch, useRouteMatch } from "react-router-dom";
 import Routes from "../../../routes/AppRoutes";
-import { useStyles, useGridStyles } from "./LayoutStyles";
-import { useTheme } from "@material-ui/core/styles";
-import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import StyledMenuWithIcon from "../Sidenav/StyledMenuWithIcon";
 import NavigationBar from "../NavBar/NavigationBar";
-import { Grid } from "@material-ui/core";
-import Orders from "../../../features/orders/containers/Orders";
+import AppHeader from "../AppBar/AppBar";
+import { useStyles } from "./LayoutStyles";
+import { useTheme } from "@material-ui/core/styles";
+import { IUser } from "../../../models";
+import NoMatch from "../NoMatch/NoMatch";
 
 interface Props {
   window?: () => Window;
 }
 export default function Layout(props: Props) {
-  const { path, url } = useRouteMatch();
+  const { url } = useRouteMatch();
   const { window } = props;
   const classes = useStyles();
-  const gridClasses = useGridStyles();
   const theme = useTheme();
   let [open, setOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const user: IUser = JSON.parse(localStorage.getItem("3linxUser"));
 
   const toggleDrawer = (open: boolean) => {
     setOpen(open);
@@ -47,36 +40,7 @@ export default function Layout(props: Props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Grid container className={gridClasses.container}>
-            <Grid item xs={12} sm={4} md={6} className={gridClasses.root}>
-              <img
-                src="https://app.3linx.com/public/images/3linx-logo.png"
-                alt="3linx"
-              />
-              <IconButton
-                color="secondary"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggleSm}
-                className={classes.menuButton}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Grid>
-            <Grid item xs={12} sm={8} md={6}>
-              <div className={classes.filtersWrapper}>
-                <Filters />
-                <StyledMenuWithIcon
-                  icon={faPowerOff}
-                  items={[{ text: "Logout" }, { text: "Profile" }]}
-                />
-              </div>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      <AppHeader handleDrawerToggleSm={handleDrawerToggleSm} />
       <Hidden smUp implementation="css">
         <Drawer
           container={container}
@@ -92,9 +56,9 @@ export default function Layout(props: Props) {
           }}
         >
           <div className={classes.drawerToolbar}>
-            <Avatar alt="D" src={user} />
+            <Avatar alt="D" src={user.avatar} />
             <div className={classes.userInfo}>
-              <div>Dejan Obradovikj</div>
+              <div>{user.fullName}</div>
               <div className={classes.userJobTitle}>Frontend Developer</div>
             </div>
           </div>
@@ -120,15 +84,15 @@ export default function Layout(props: Props) {
         >
           {open ? (
             <div className={classes.drawerToolbar}>
-              <Avatar alt="D" src={user} />
+              <Avatar alt="D" src={user.avatar} />
               <div className={classes.userInfo}>
-                <div>Dejan Obradovikj</div>
-                <div className={classes.userJobTitle}>Frontend Developer</div>
+                <div>{user.fullName}</div>
+                <div className={classes.userJobTitle}>{user.jobTitle}</div>
               </div>
             </div>
           ) : (
             <div className={classes.collapsedToolbar}>
-              <Avatar alt="D" src={user} />
+              <Avatar alt="D" src={user.avatar} />
             </div>
           )}
           <div
@@ -155,8 +119,8 @@ export default function Layout(props: Props) {
       <main className={classes.content}>
         <Switch>
           <Route exact path={`${url}`}>
-          {<Redirect to={`${url}orders`} />}
-        </Route>
+            {<Redirect to={`${url}orders`} />}
+          </Route>
           {Routes.map((route: any) => (
             <Route
               path={`${url}${route.path}`}
@@ -164,6 +128,9 @@ export default function Layout(props: Props) {
               component={route.component}
             />
           ))}
+          <Route path="*">
+            <NoMatch />
+          </Route>
         </Switch>
       </main>
     </div>

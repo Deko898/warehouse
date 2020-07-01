@@ -1,7 +1,8 @@
 import React from "react";
+import ComingSoon from "../../../../common/components/ComingSoon/ComingSoon";
 
 const ReadyToShip: React.FunctionComponent = () => {
-  return <div>Ready To Ship Works!</div>;
+  return <ComingSoon />;
 };
 
 export default ReadyToShip;

@@ -40,7 +40,8 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
   const itemTextClasses = useItemTextStyles();
   const classes = useOrderStyles();
   const contentClasses = useCardContentStyles();
-  
+  const handleItemClick = () => {};
+
   React.useEffect(() => {
     const [systemId] = location.pathname.split("/").reverse();
     fetchOrderDetails(systemId);
@@ -72,6 +73,7 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
                   color="secondary"
                   icon={faEllipsisV}
                   items={[{ text: "Edit" }, { text: "Action" }]}
+                  handleItemClick={handleItemClick}
                 />
               </div>
             </Hidden>
@@ -91,6 +93,7 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
                   icon={faCloudDownloadAlt}
                   items={[{ text: "Action" }]}
                   text="Actions"
+                  handleItemClick={handleItemClick}
                 />
               </div>
             </Hidden>

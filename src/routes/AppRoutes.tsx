@@ -1,25 +1,25 @@
 import Orders from "../features/orders/containers/Orders";
-import Dashboard from "../features/dashboard/Dashboard";
 import { IconType } from "../common/enums/IconType.enum";
+import ComingSoon from "../common/components/ComingSoon/ComingSoon";
 
 const Routes = [
   {
     path: "products",
     name: "Products",
-    component: Dashboard,
+    component: ComingSoon,
     iconType: IconType.PRODUCTS,
   },
   {
     path: "dashboard",
     name: "Dashboard",
-    component: Dashboard,
+    component: ComingSoon,
     iconType: IconType.PRODUCTS,
   },
   {
     path: "inventory",
     name: "Inventory",
-    component: Dashboard,
-    iconType: IconType.PRODUCTS
+    component: ComingSoon,
+    iconType: IconType.PRODUCTS,
   },
   {
     path: "orders",
@@ -30,32 +30,32 @@ const Routes = [
   {
     path: "Returns",
     name: "returns",
-    component: Dashboard,
+    component: ComingSoon,
     iconType: IconType.RETURNS,
   },
   {
     path: "support",
     name: "Support",
-    component: Dashboard,
-    iconType: IconType.SUPPORT
+    component: ComingSoon,
+    iconType: IconType.SUPPORT,
   },
   {
     path: "insights",
     name: "Insights",
-    component: Dashboard,
-    iconType: IconType.PRODUCTS
+    component: ComingSoon,
+    iconType: IconType.PRODUCTS,
   },
   {
     path: "finance",
     name: "Finance",
-    component: Dashboard,
-    iconType: IconType.PRODUCTS
+    component: ComingSoon,
+    iconType: IconType.PRODUCTS,
   },
   {
     path: "config",
     name: "Config",
-    component: Dashboard,
-    iconType: IconType.CONFIG
+    component: ComingSoon,
+    iconType: IconType.CONFIG,
   },
 ];
 

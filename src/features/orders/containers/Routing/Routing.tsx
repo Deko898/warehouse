@@ -1,7 +1,8 @@
 import React from "react";
+import ComingSoon from "../../../../common/components/ComingSoon/ComingSoon";
 
 const Routing: React.FunctionComponent = () => {
-  return <div>Routing Works!</div>;
+  return <ComingSoon />;
 };
 
 export default Routing;

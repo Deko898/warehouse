@@ -1,5 +1,5 @@
 import { ILoginDto, IUser } from '../models';
-import { USER_MOCK } from '../charts/mock-data/users.mock';
+import { USER_MOCK } from '../mock/users.mock';
 
 const login = (loginDto: ILoginDto): Promise<IUser> => new Promise((res, rej) => setTimeout(() => {
     const authUser = USER_MOCK.find(u => u.email.toLowerCase() === loginDto.email.toLowerCase() && u.password.toLowerCase() === loginDto.password.toLowerCase());
@@ -9,6 +9,9 @@ const login = (loginDto: ILoginDto): Promise<IUser> => new Promise((res, rej) =>
     rej('Invaild email or password')
 }, 300));
 
+const logout = (): Promise<void> => new Promise((res, rej) => setTimeout(() => res(), 300));
+
 export const authService = {
-    login
+    login,
+    logout
 }

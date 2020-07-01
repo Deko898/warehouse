@@ -18,6 +18,18 @@ export interface IRequestLoginFailurePayload {
     error: any;
 }
 
+export interface IRequestLogoutPayload {
+    callback: Function
+}
+
+export interface IRequestLogoutSuccessPayload {
+    user: null;
+}
+
+export interface IRequestLogoutFailurePayload {
+    error: any;
+}
+
 export interface RequestLogin {
     type: Types.REQUEST_LOGIN;
     payload: IRequestLoginPayload
@@ -33,7 +45,25 @@ export interface RequestLoginFailure {
     payload: IRequestLoginFailurePayload
 }
 
+export interface RequestLogout {
+    type: Types.REQUEST_LOGOUT;
+    payload: IRequestLogoutPayload
+}
+
+export interface RequestLogoutSuccess {
+    type: Types.REQUEST_LOGOUT_SUCCESS;
+    payload: IRequestLogoutSuccessPayload;
+}
+
+export interface RequestLogoutFailure {
+    type: Types.REQUEST_LOGOUT_FAILURE;
+    payload: IRequestLogoutFailurePayload
+}
+
 
 export type Actions = RequestLogin
     | RequestLoginSuccess
-    | RequestLoginFailure;
+    | RequestLoginFailure
+    | RequestLogout
+    | RequestLogoutSuccess
+    | RequestLogoutFailure;
