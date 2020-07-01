@@ -93,7 +93,7 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
             showExtraInfo={true}
             withDivider={false}
           />
-          <Route path={match.path}>
+          <Route exact path={match.path}>
             {<Redirect to={`${match.path}/inbox`} />}
           </Route>
           {orderPipelineRoutes.map((route: any) => (

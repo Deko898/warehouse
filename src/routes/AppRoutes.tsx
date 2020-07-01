@@ -4,55 +4,55 @@ import { IconType } from "../common/enums/IconType.enum";
 
 const Routes = [
   {
-    path: "/products",
+    path: "products",
     name: "Products",
     component: Dashboard,
     iconType: IconType.PRODUCTS,
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     name: "Dashboard",
     component: Dashboard,
     iconType: IconType.PRODUCTS,
   },
   {
-    path: "/inventory",
+    path: "inventory",
     name: "Inventory",
     component: Dashboard,
     iconType: IconType.PRODUCTS
   },
   {
-    path: "/orders",
+    path: "orders",
     name: "Orders",
     component: Orders,
     iconType: IconType.ORDERS,
   },
   {
-    path: "/Returns",
+    path: "Returns",
     name: "returns",
     component: Dashboard,
     iconType: IconType.RETURNS,
   },
   {
-    path: "/support",
+    path: "support",
     name: "Support",
     component: Dashboard,
     iconType: IconType.SUPPORT
   },
   {
-    path: "/insights",
+    path: "insights",
     name: "Insights",
     component: Dashboard,
     iconType: IconType.PRODUCTS
   },
   {
-    path: "/finance",
+    path: "finance",
     name: "Finance",
     component: Dashboard,
     iconType: IconType.PRODUCTS
   },
   {
-    path: "/config",
+    path: "config",
     name: "Config",
     component: Dashboard,
     iconType: IconType.CONFIG

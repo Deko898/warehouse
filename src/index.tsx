@@ -12,9 +12,7 @@ import 'leaflet/dist/leaflet.css';
 
 ReactDOM.render(
   <MuiThemeProvider theme={muiTheme}>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </MuiThemeProvider>,
   document.getElementById("root")
 );

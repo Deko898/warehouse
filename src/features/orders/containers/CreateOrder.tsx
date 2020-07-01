@@ -19,7 +19,7 @@ const CreateOrder: React.FunctionComponent<RouteComponentProps> = ({
     <Card>
       <CardContent className={classes.root}>
         <ComponentTabs routes={orderCreateRoutes} showExtraInfo={false} withDivider={true}/>
-        <Route path={match.path}>
+        <Route exact path={match.path}>
           {<Redirect to={`${match.path}/upload`} />}
         </Route>
         {orderCreateRoutes.map((route: any) => (

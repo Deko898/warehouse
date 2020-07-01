@@ -13,7 +13,7 @@ import Fab from "@material-ui/core/Fab";
 import Avatar from "@material-ui/core/Avatar";
 import user from "../../../assets/images/pic.jpg";
 import Filters from "../AppBar/AppBarFilters";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch, useRouteMatch } from "react-router-dom";
 import Routes from "../../../routes/AppRoutes";
 import { useStyles, useGridStyles } from "./LayoutStyles";
 import { useTheme } from "@material-ui/core/styles";
@@ -21,11 +21,13 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import StyledMenuWithIcon from "../Sidenav/StyledMenuWithIcon";
 import NavigationBar from "../NavBar/NavigationBar";
 import { Grid } from "@material-ui/core";
+import Orders from "../../../features/orders/containers/Orders";
 
 interface Props {
   window?: () => Window;
 }
-export default function MiniDrawer(props: Props) {
+export default function Layout(props: Props) {
+  const { path, url } = useRouteMatch();
   const { window } = props;
   const classes = useStyles();
   const gridClasses = useGridStyles();
@@ -40,7 +42,6 @@ export default function MiniDrawer(props: Props) {
   const handleDrawerToggleSm = () => {
     setMobileOpen(!mobileOpen);
   };
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
@@ -152,16 +153,18 @@ export default function MiniDrawer(props: Props) {
       </Hidden>
 
       <main className={classes.content}>
-        <Route exact path="/">
-          {<Redirect to="/orders" />}
+        <Switch>
+          <Route exact path={`${url}`}>
+          {<Redirect to={`${url}orders`} />}
         </Route>
-        {Routes.map((route: any) => (
-          <Route
-            path={route.path}
-            key={route.path}
-            component={route.component}
-          />
-        ))}
+          {Routes.map((route: any) => (
+            <Route
+              path={`${url}${route.path}`}
+              key={route.path}
+              component={route.component}
+            />
+          ))}
+        </Switch>
       </main>
     </div>
   );

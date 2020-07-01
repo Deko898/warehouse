@@ -19,7 +19,7 @@ const NavigationBar: React.FunctionComponent<RouteComponentProps> = (props) => {
     <MenuList>
       {Routes.map((prop, key) => {
         return (
-          <NavLink to={prop.path} style={{ textDecoration: "none" }} key={key}>
+          <NavLink to={`/${prop.path}`} style={{ textDecoration: "none" }} key={key}>
             <MenuItem selected={activeRoute(prop.path)}>
               <ListItemIcon className={classes.root}>
                 <Icon className={prop.iconType} />
