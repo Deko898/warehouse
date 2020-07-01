@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Hidden,
   TextField,
@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { useLoginStyles } from "./login.styles";
 import { BlueCheckbox } from "../../common/components/BlueCheckbox";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, ErrorMessage } from "formik";
 import { validationLoginSchema } from "../utils/validation";
 import { IAppState } from "../../store/app-state.interface";
 import { ILoginDto, IUser } from "../../models";
@@ -47,9 +47,7 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
               values,
               touched,
               errors,
-              dirty,
               isValid,
-              isSubmitting,
               handleChange,
               handleBlur,
               handleSubmit,

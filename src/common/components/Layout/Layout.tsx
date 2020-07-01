@@ -21,13 +21,12 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import StyledMenuWithIcon from "../Sidenav/StyledMenuWithIcon";
 import NavigationBar from "../NavBar/NavigationBar";
 import { Grid } from "@material-ui/core";
-import Orders from "../../../features/orders/containers/Orders";
 
 interface Props {
   window?: () => Window;
 }
 export default function Layout(props: Props) {
-  const { path, url } = useRouteMatch();
+  const { url } = useRouteMatch();
   const { window } = props;
   const classes = useStyles();
   const gridClasses = useGridStyles();

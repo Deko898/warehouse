@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
 import { Tabs, Tab } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
@@ -31,10 +31,16 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
   showExtraInfo = false,
   withDivider = false,
 }) => {
+  const [value, setValue] = useState(0);
+  const handleRoute = (e: any, newValue: any) => {
+		setValue(newValue);
+	};
   return (
     <React.Fragment>
       <Tabs
-        value={history.location.pathname}
+        //value={history.location.pathname}
+        value={value}
+        onChange={handleRoute}
         variant="scrollable"
         scrollButtons="auto"
       >
@@ -45,7 +51,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
               component={Link}
               to={`${match.url}${r.path}`}
               key={r.path}
-              value={`${match.url}${r.path}`}
+              //value={`${match.url}${r.path}`}
             ></Tab>
           );
         })}
