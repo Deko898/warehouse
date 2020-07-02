@@ -37,7 +37,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
   };
   useEffect(() => {
 		[...routes].forEach((route) => {
-      if(history.location.pathname.includes(route.path)) {
+      if(history.location.pathname.includes(route.path) && value !== route.activeIndex) {
         setValue(route.activeIndex);
       }
 		});
