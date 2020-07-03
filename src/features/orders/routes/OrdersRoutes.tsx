@@ -122,27 +122,27 @@ const orderPipelineRoutes = [
   {
     name: "On Hold",
     path: "/onHold",
-    activeIndex: 1,
+    activeIndex: 0,
     component: OnHold,
   },
-  { name: "Pending", path: "/pending", activeIndex: 2, component: Pending },
-  { name: "Inbox", path: "/inbox", activeIndex: 3, component: Inbox },
-  { name: "Picking", path: "/picking", activeIndex: 4, component: Picking },
-  { name: "Rework", path: "/rework", activeIndex: 5, component: Rework },
-  { name: "Packing", path: "/packing", activeIndex: 6, component: Packing },
-  { name: "Routing", path: "/routing", activeIndex: 7, component: Routing },
-  { name: "Shipping", path: "/shipping", activeIndex: 8, component: Shipping },
+  { name: "Pending", path: "/pending", activeIndex: 1, component: Pending },
+  { name: "Inbox", path: "/inbox", activeIndex: 2, component: Inbox },
+  { name: "Picking", path: "/picking", activeIndex: 3, component: Picking },
+  { name: "Rework", path: "/rework", activeIndex: 4, component: Rework },
+  { name: "Packing", path: "/packing", activeIndex: 5, component: Packing },
+  { name: "Routing", path: "/routing", activeIndex: 6, component: Routing },
+  { name: "Shipping", path: "/shipping", activeIndex: 7, component: Shipping },
   {
     name: "Ready to Ship",
     path: "/readyToShip",
-    activeIndex: 9,
+    activeIndex: 8,
     component: ReadyToShip,
   },
 ];
 
 const orderCreateRoutes = [
-  { name: "Web Form", path: "/form", activeIndex: 1, component: WebForm },
-  { name: "File Upload", path: "/upload", activeIndex: 2, component: FileUpload },
+  { name: "Web Form", path: "/form", activeIndex: 0, component: WebForm },
+  { name: "File Upload", path: "/upload", activeIndex: 1, component: FileUpload },
 ]
 
 export { ordersRoutes, orderPipelineRoutes, orderCreateRoutes };

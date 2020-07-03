@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppTabMenu from "./AppTabMenu";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -13,12 +13,18 @@ const AppTabs: React.FunctionComponent<IProps> = ({
   history,
 }: IProps) => {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+  
+  const handleRoute = (e: any, newValue: any) => {
+		setValue(newValue);
+	};
   return (
     <Tabs
-      value={history.location.pathname}
-      className={classes.appTabs}
-      variant="scrollable"
-      scrollButtons="auto"
+    value={value}
+    onChange={handleRoute}
+    className={classes.appTabs}
+    variant="scrollable"
+    scrollButtons="auto"
     >
       {routes.map((r) => (
         <Tab

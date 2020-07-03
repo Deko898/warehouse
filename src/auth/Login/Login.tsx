@@ -31,7 +31,7 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
 
   return (
     <div className={classes.loginWrapper}>
-      {/* <Hidden xsDown implementation="css"> */}
+      <Hidden xsDown implementation="css">
       <Carousel
         className={classes.sliderContainer}
         autoPlay
@@ -47,7 +47,7 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
         <div className={clsx(classes.imgWrapper, classes.slideThree)}></div>
         <div className={clsx(classes.imgWrapper, classes.slideFour)}></div>
       </Carousel>
-      {/* </Hidden> */}
+      </Hidden>
       <div className={classes.loginContentContainer}>
         <div className={classes.logoWrapper}></div>
 
