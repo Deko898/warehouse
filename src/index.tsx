@@ -9,6 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'leaflet/dist/leaflet.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 ReactDOM.render(
   <MuiThemeProvider theme={muiTheme}>

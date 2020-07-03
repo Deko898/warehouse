@@ -15,6 +15,8 @@ import { ILoginDto, IUser } from "../../models";
 import { connect } from "react-redux";
 import { requestLoginAction } from "../../store/modules/auth/actions";
 import { useHistory } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import clsx from "clsx";
 
 interface IProps {
   logIn: Function;
@@ -29,9 +31,23 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
 
   return (
     <div className={classes.loginWrapper}>
-      <Hidden xsDown implementation="css">
-        <div className={classes.imgWrapper}></div>
-      </Hidden>
+      {/* <Hidden xsDown implementation="css"> */}
+      <Carousel
+        className={classes.sliderContainer}
+        autoPlay
+        showIndicators={false}
+        showThumbs={false}
+        showArrows={false}
+        stopOnHover={false}
+        showStatus={false}
+        infiniteLoop={true}
+      >
+        <div className={clsx(classes.imgWrapper, classes.slideOne)}></div>
+        <div className={clsx(classes.imgWrapper, classes.slideTwo)}></div>
+        <div className={clsx(classes.imgWrapper, classes.slideThree)}></div>
+        <div className={clsx(classes.imgWrapper, classes.slideFour)}></div>
+      </Carousel>
+      {/* </Hidden> */}
       <div className={classes.loginContentContainer}>
         <div className={classes.logoWrapper}></div>
 

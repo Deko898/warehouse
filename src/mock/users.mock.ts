@@ -11,7 +11,7 @@ export const USER_MOCK = [
     },
     {
         email: 'kashif_raza@hotmail.com',
-        password: 'zxcasd123',
+        password: 'asdzxc123',
         userDetails: {
             fullName: 'Kashif Raza',
             jobTitle: 'Product Owner',

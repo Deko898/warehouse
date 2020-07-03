@@ -10,11 +10,22 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             }
         },
         imgWrapper: {
-            backgroundImage: `url('http://seantheme.com/color-admin/admin/assets/img/login-bg/login-bg-11.jpg')`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             height: '100%'
+        },
+        slideOne: {
+            backgroundImage: `url('https://uploads-ssl.webflow.com/5cee41df22e95a79c0962e26/5dcc4182e630b2cf65a52872_Bg.jpg')`
+        },
+        slideTwo: {
+            backgroundImage: `url(${require("../../assets/images/miki.jpeg")})`
+        },
+        slideThree: {
+            backgroundImage: `url(${require("../../assets/images/miki_house.jpg")})`
+        },
+        slideFour: {
+            backgroundImage: `url(${require("../../assets/images/ny.jpg")})`
         },
         loginContentContainer: {
             background: theme.palette.primary.contrastText,
@@ -65,7 +76,7 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             '& .MuiButton-root': {
                 marginTop: theme.spacing(1)
             },
-            
+
             '& .MuiFormControlLabel-root': {
                 marginBottom: theme.spacing(2)
             }
@@ -80,6 +91,13 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             '& p': {
                 color: '#899297',
                 fontSize: '14px'
+            }
+        },
+        sliderContainer: {
+            width: '100%',
+            height: '100%',
+            '& .slider': {
+                height: '100vh',
             }
         }
     })
