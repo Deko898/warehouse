@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
 import { Tabs, Tab } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
@@ -35,6 +35,13 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
   const handleRoute = (e: any, newValue: any) => {
 		setValue(newValue);
   };
+  useEffect(() => {
+		[...routes].forEach((route) => {
+      if(history.location.pathname.includes(route.path) && value !== route.activeIndex) {
+        setValue(route.activeIndex);
+      }
+		});
+	}, [value, routes, history.location.pathname]);
   return (
     <React.Fragment>
       <Tabs
