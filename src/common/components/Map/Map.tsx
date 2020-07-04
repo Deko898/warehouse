@@ -4,7 +4,6 @@ import {
   TileLayer,
   CircleMarker,
   Polyline,
-  Viewport,
 } from "react-leaflet";
 import * as Leaflet from "leaflet";
 
@@ -30,11 +29,7 @@ interface IProps {
 
 const LeafletMap = ({ polyline, positions }: IProps) => {
   const classes = useStyles();
-  const center = polyline[0] as [number, number];
-  const viewport: Viewport = {
-    center,
-    zoom: 8,
-  };
+
   const bounds: any = [polyline[0], polyline[2]];
   return (
     <Map
