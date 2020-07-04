@@ -17,7 +17,7 @@ const AppTabs: React.FunctionComponent<IProps> = ({
   
   const handleRoute = (e: any, newValue: any) => {
 		setValue(newValue);
-	};
+  };
   return (
     <Tabs
     value={value}

@@ -37,6 +37,7 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
     const lp = location.pathname.split("/");
     lp.splice(lp.length - 1, 1);
     breadcrumbs = lp.join("/");
+    console.log(breadcrumbs)
   }
   return (
     <div>
