@@ -54,6 +54,8 @@ export const useGridStyles = makeStyles((theme: Theme) => createStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingBottom: theme.spacing(1.5)
+        [theme.breakpoints.down("xs")]: {
+            paddingBottom: theme.spacing(1.5)
+        },
     }
 }))

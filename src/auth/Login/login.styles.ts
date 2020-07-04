@@ -36,7 +36,11 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             flexDirection: 'column',
             justifyContent: 'center',
             flex: '0 !important',
-            alignItems: 'center',
+            '& h1': {
+                margin: 0,
+                marginBottom: theme.spacing(1),
+                color: theme.palette.secondary.main
+            },
             [theme.breakpoints.down("md")]: {
                 width: '400px',
                 minWidth: '400px',
@@ -59,8 +63,9 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            height: '44px',
-            width: '134px'
+            height: '52px',
+            width: '158px',
+            marginBottom: theme.spacing(4)
         },
 
         formWrapper: {
@@ -76,10 +81,6 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             '& .MuiButton-root': {
                 marginTop: theme.spacing(1)
             },
-
-            '& .MuiFormControlLabel-root': {
-                marginBottom: theme.spacing(2)
-            }
         },
         formFooter: {
             width: '100%',
@@ -87,7 +88,6 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             borderTop: `1px solid ${theme.palette.background.default}`,
             position: 'relative',
             top: '30%',
-
             '& p': {
                 color: '#899297',
                 fontSize: '14px'
@@ -99,6 +99,18 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             '& .slider': {
                 height: '100vh',
             }
+        },
+        loginSubHeader: {
+            color: '#8695af',
+            fontWeight: 600,
+            margin: theme.spacing(0)
+        },
+
+        lastFormRowWrapper: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: theme.spacing(2)
         }
     })
 );

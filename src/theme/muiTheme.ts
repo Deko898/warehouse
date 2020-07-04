@@ -6,6 +6,8 @@ import { palette } from './palette';
 
 export const muiTheme = createMuiTheme({
     typography: {
+        fontFamily: `"Roboto", sans-serif`,
+        fontSize: 14,
     },
     palette,
     shape: {
@@ -107,7 +109,7 @@ export const muiTheme = createMuiTheme({
             subheader: {
                 color: palette.secondary.contrastText
             }
-        }
+        },
     }
 },
 );

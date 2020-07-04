@@ -5,6 +5,7 @@ import {
   FormControlLabel,
   Button,
   FormHelperText,
+  Link,
 } from "@material-ui/core";
 import { useLoginStyles } from "./login.styles";
 import { BlueCheckbox } from "../../common/components/BlueCheckbox";
@@ -32,25 +33,28 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
   return (
     <div className={classes.loginWrapper}>
       <Hidden xsDown implementation="css">
-      <Carousel
-        className={classes.sliderContainer}
-        autoPlay
-        showIndicators={false}
-        showThumbs={false}
-        showArrows={false}
-        stopOnHover={false}
-        showStatus={false}
-        infiniteLoop={true}
-      >
-        <div className={clsx(classes.imgWrapper, classes.slideOne)}></div>
-        <div className={clsx(classes.imgWrapper, classes.slideTwo)}></div>
-        <div className={clsx(classes.imgWrapper, classes.slideThree)}></div>
-        <div className={clsx(classes.imgWrapper, classes.slideFour)}></div>
-      </Carousel>
+        <Carousel
+          className={classes.sliderContainer}
+          autoPlay
+          showIndicators={false}
+          showThumbs={false}
+          showArrows={false}
+          stopOnHover={false}
+          showStatus={false}
+          infiniteLoop={true}
+        >
+          <div className={clsx(classes.imgWrapper, classes.slideOne)}></div>
+          <div className={clsx(classes.imgWrapper, classes.slideTwo)}></div>
+          <div className={clsx(classes.imgWrapper, classes.slideThree)}></div>
+          <div className={clsx(classes.imgWrapper, classes.slideFour)}></div>
+        </Carousel>
       </Hidden>
       <div className={classes.loginContentContainer}>
         <div className={classes.logoWrapper}></div>
-
+        <h1>Welcome back!</h1>
+        <p className={classes.loginSubHeader}>
+          We can't wait for you to see what's new. Happy Shipping!
+        </p>
         <Formik
           initialValues={{ email: "", password: "", rememberMe: false }}
           onSubmit={(values) => {
@@ -100,20 +104,33 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
                   onChange={handleChange}
                   value={values.password}
                 />
-                <FormControlLabel
-                  control={<BlueCheckbox name="rememberMe" />}
-                  id="rememberMe"
-                  label="Remember Me"
-                  name="rememberMe"
-                  onChange={handleChange}
-                  value={values.rememberMe}
-                />
-                {error && <FormHelperText error={true}>{error}</FormHelperText>}
-                <ErrorMessage
-                  name="invalidRequest"
-                  component="div"
-                  className="invalid-feedback"
-                />
+                <div className={classes.lastFormRowWrapper}>
+                  <FormControlLabel
+                    control={<BlueCheckbox name="rememberMe" />}
+                    id="rememberMe"
+                    label="Remember Me"
+                    name="rememberMe"
+                    onChange={handleChange}
+                    value={values.rememberMe}
+                  />
+                  {error && (
+                    <FormHelperText error={true}>{error}</FormHelperText>
+                  )}
+                  <ErrorMessage
+                    name="invalidRequest"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                  <Link
+                    component="button"
+                    variant="body2"
+                    onClick={() => {
+                      console.info("I'm a button.");
+                    }}
+                  >
+                    Forgot Password?
+                  </Link>
+                </div>
                 <Button
                   variant="contained"
                   color="primary"
@@ -127,7 +144,9 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
           }}
         </Formik>
         <div className={classes.formFooter}>
-          <p>© All Right Reserved 2020</p>
+          <p>
+            Copyright © 2020 3LINX Unified Commerce, LLC | All Rights Reserved
+          </p>
         </div>
       </div>
     </div>

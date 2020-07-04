@@ -24,39 +24,8 @@ export const configureRoutes = [
           name: "Create integrations",
           path: "/create-integration",
         },
-        {
-          name: "Integration lookup",
-          path: "/integration-lookup",
-        },
       ],
-    },
-    {
-        id: "2",
-        name: "Picking",
-        path: "/picking",
-        children: [
-          {
-            name: "Pick Orders",
-            path: "/pick-orders",
-          },
-          {
-            name: "DePick Pick List",
-            path: "/de-pick-pick-list",
-          },
-          {
-            name: "Confirm Pick List",
-            path: "/confirm-pick-list",
-          },
-          {
-            name: "Print Tote Contents",
-            path: "/print-tote-contents",
-          },
-          {
-            name: "Problem Resolution",
-            path: "/problem-resolution",
-          },
-        ],
-      },
+    }
   ];
 
 export const availableIntegrations = [

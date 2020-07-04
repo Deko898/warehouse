@@ -6,7 +6,8 @@ export const MuiTabs = {
             flexWrap: 'nowrap'
         },
         "& .MuiTabs-indicator": {
-            backgroundColor: palette.primary.main
+            backgroundColor: palette.primary.main,
+            top: 0
         }
     },
 }

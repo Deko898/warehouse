@@ -7,7 +7,6 @@ import { withRouter, RouteComponentProps, NavLink } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
-import clsx from "clsx";
 import { useStyles } from "./styles/appTabMenu.styles";
 
 const StyledMenu = withStyles({
@@ -56,12 +55,10 @@ const AppTabMenu = ({ items, parent, location, match:m }: IProps) => {
   };
 
   return (
-    <div>
+    <div className={classes.appTabMenuWrapper}>
       <IconButton
         onClick={handleClick}
-        className={clsx(classes.root, {
-          [classes.selectedRoot]: activeRoute(parent.path),
-        })}
+        className={classes.root}
       >
         {parent.name}
         {open ? <ArrowDropUp /> : <ArrowDropDownIcon />}

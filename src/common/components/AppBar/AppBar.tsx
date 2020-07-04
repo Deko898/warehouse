@@ -52,7 +52,7 @@ const AppHeader: React.FC<IProps> = ({ logout, handleDrawerToggleSm }) => {
               <StyledMenuWithIcon
                 icon={faPowerOff}
                 handleItemClick={handleLogout}
-                items={[{ text: "Logout" }, { text: "Profile" }]}
+                items={[{ text: "Profile" }, { text: "Logout" }]}
               />
             </div>
           </Grid>
