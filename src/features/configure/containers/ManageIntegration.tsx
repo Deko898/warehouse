@@ -25,12 +25,9 @@ import Button from '@material-ui/core/Button';
   }) => {
     const classes = useOrderStyles();
     const {path, url} = useRouteMatch();
-    let breadcrumbs = path
     return (
         <>
-        <AppBreadcrumbs breadcrumbs={breadcrumbs} />
- 
-
+        <AppBreadcrumbs breadcrumbs={path} />
         <Grid container spacing={2}>
           <Grid item >
           <Card style={{width: '200px'}}>
