@@ -1,0 +1,3 @@
+export enum Types {
+    AVAILABLE_INTEGRATIONS = 'AVAILABLE_INTEGRATIONS',
+}
