@@ -35,7 +35,9 @@ interface IProps extends RouteComponentProps {
 }
 
 const AppTabMenu = ({ items, parent, location, match:m }: IProps) => {
-  const match = "/config/integrations";
+  const url = location.pathname.split('/');
+  const match = `/${url[1]}/${url[2]}`;
+  
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [open, setOpen] = React.useState<boolean>(false);
   const classes = useStyles();

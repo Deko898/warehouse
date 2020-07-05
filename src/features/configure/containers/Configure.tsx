@@ -7,11 +7,11 @@ import {
   } from "react-router-dom";
   import React from "react";
   import { configureRoutes } from "../routes/ConfigureRoutes";
-  import useOrderStyles from "../../orders/containers/OrdersStyles";
+  import useConfigureStyles from "./ConfigureStyles";
   import AppTabs from "../../../common/components/AppBar/AppTabs";
   
   const Configure: React.FunctionComponent<RouteComponentProps> = ({ match }) => {
-    const classes = useOrderStyles();
+    const classes = useConfigureStyles();
     return (
       <div className={classes.ordersPiplineContainer}>
         <AppTabs routes={configureRoutes} />
