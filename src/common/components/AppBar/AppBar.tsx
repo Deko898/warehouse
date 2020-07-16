@@ -32,10 +32,13 @@ const AppHeader: React.FC<IProps> = ({ logout, handleDrawerToggleSm }) => {
       <Toolbar className={classes.toolbar}>
         <Grid container className={gridClasses.container}>
           <Grid item xs={12} sm={4} md={6} className={gridClasses.root}>
-            <img
-              src="https://app.3linx.com/public/images/3linx-logo.png"
-              alt="3linx"
-            />
+            <div className={classes.logoWrapper}>
+              <img
+                src="https://app.3linx.com/public/images/3linx-logo.png"
+                alt="3linx"
+              />
+              <p>Part of the 3LINX Fulfillment Network</p>
+            </div>
             <IconButton
               color="secondary"
               aria-label="open drawer"

@@ -13,6 +13,14 @@ export const useStyles = makeStyles((theme: Theme) =>
                 }
             }
         },
+        logoWrapper: {
+            display: 'flex',
+            alignItems: 'center',
+            '& p': {
+                marginLeft: theme.spacing(2),
+                color: theme.palette.secondary.main
+            }
+        },
         menuButton: {
             [theme.breakpoints.up("sm")]: {
                 display: "none",

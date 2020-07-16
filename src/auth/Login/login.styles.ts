@@ -13,7 +13,22 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            height: '100%'
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        imageTitle: {
+            fontWeight: 700,
+            fontSize: '100px',
+            color: '#fff',
+            marginTop: '325px',
+            background: '#000',
+            opacity: 0.8,
+            padding: '0 20px',
+            '& p': {
+                margin: 0
+            }
         },
         slideOne: {
             backgroundImage: `url('https://uploads-ssl.webflow.com/5cee41df22e95a79c0962e26/5dcc4182e630b2cf65a52872_Bg.jpg')`
@@ -63,8 +78,8 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            height: '52px',
-            width: '158px',
+            height: '57px',
+            width: '173px',
             marginBottom: theme.spacing(4)
         },
 

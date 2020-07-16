@@ -35,7 +35,7 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
       <Hidden xsDown implementation="css">
         <Carousel
           className={classes.sliderContainer}
-          autoPlay
+          // autoPlay
           showIndicators={false}
           showThumbs={false}
           showArrows={false}
@@ -43,17 +43,23 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
           showStatus={false}
           infiniteLoop={true}
         >
-          <div className={clsx(classes.imgWrapper, classes.slideOne)}></div>
-          <div className={clsx(classes.imgWrapper, classes.slideTwo)}></div>
-          <div className={clsx(classes.imgWrapper, classes.slideThree)}></div>
-          <div className={clsx(classes.imgWrapper, classes.slideFour)}></div>
+          {/* <div className={clsx(classes.imgWrapper, classes.slideOne)}></div> */}
+          {/* <div className={clsx(classes.imgWrapper, classes.slideTwo)}>
+          </div> */}
+          <div className={clsx(classes.imgWrapper, classes.slideThree)}>
+            <div className={classes.imageTitle}>
+              <p>MikiHouse</p>
+              <p>is Unified</p>
+            </div>
+          </div>
+          {/* <div className={clsx(classes.imgWrapper, classes.slideFour)}></div> */}
         </Carousel>
       </Hidden>
       <div className={classes.loginContentContainer}>
         <div className={classes.logoWrapper}></div>
-        <h1>Welcome back!</h1>
+        <h1>Welcome!</h1>
         <p className={classes.loginSubHeader}>
-          We can't wait for you to see what's new. Happy Shipping!
+          We look forward to serving you!
         </p>
         <Formik
           initialValues={{ email: "", password: "", rememberMe: false }}

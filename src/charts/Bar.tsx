@@ -9,6 +9,7 @@ import {
 } from "@devexpress/dx-react-chart-material-ui";
 
 import { Animation } from "@devexpress/dx-react-chart";
+import { useStyles } from "./styles/chart.styles";
 
 const data: any[] = [
   { year: "1950", population: 2.525 },
@@ -20,15 +21,18 @@ const data: any[] = [
   { year: "2010", population: 6.93 },
 ];
 
-export const BarChart: React.FunctionComponent = () => (
-  <Paper>
-    <Chart data={data} height={240}>
-      <ArgumentAxis />
-      <ValueAxis />
+export const BarChart: React.FunctionComponent = () => {
+  const classes = useStyles();
+  return (
+    <Paper className={classes.root}>
+      <Chart data={data} height={240}>
+        <ArgumentAxis />
+        <ValueAxis />
 
-      <BarSeries valueField="population" argumentField="year" />
-      <Title text="Orders Chronological" />
-      <Animation />
-    </Chart>
-  </Paper>
-);
+        <BarSeries valueField="population" argumentField="year" />
+        <Title text="Orders Chronological" />
+        <Animation />
+      </Chart>
+    </Paper>
+  );
+};

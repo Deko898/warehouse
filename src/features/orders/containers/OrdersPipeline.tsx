@@ -11,6 +11,7 @@ import { Grid, Card, CardContent } from "@material-ui/core";
 import { BarChart } from "../../../charts/Bar";
 import { PieChart } from "../../../charts/Pie";
 import { DoughnutChart } from "../../../charts/Doughnut";
+import { LineChart } from "../../../charts/Line";
 import { SideBySideStacked } from "../../../charts/SideBySideStackedBar";
 import useOrderStyles from "./OrdersStyles";
 import StyledMenuWithIcon from "../../../common/components/Sidenav/StyledMenuWithIcon";
@@ -80,7 +81,8 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
             <BarChart />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <PieChart />
+            {/* <PieChart /> */}
+            <LineChart/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <SideBySideStacked />
