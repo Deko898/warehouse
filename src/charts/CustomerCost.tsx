@@ -7,26 +7,32 @@ import {
 	ArgumentAxis,
 	ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
-
-import { Animation } from '@devexpress/dx-react-chart';
+import { Animation, LineSeries } from '@devexpress/dx-react-chart';
+import { useStyles } from "./styles/chart.styles";
 
 const data: any = [
-	{ year: '1950', population: 2.525 },
-	{ year: '1960', population: 3.018 },
-	{ year: '1970', population: 3.682 },
-	{ year: '1980', population: 4.44 },
-	{ year: '1990', population: 5.31 },
+	{ month: 'May', cost: 12.5 },
+	{ month: 'Apri', cost: 12.34 },
+	{ month: 'Mar', cost: 11.23 },
+	{ month: 'Feb', cost: 2 },
+	{ month: 'Jan', cost: 10.95 },
 ];
 
 export const CustomerCost: React.FunctionComponent = () => {
+	const classes = useStyles();
 	return (
-		<Paper>
-			<Chart data={data} rotated height={240}>
+		<Paper className={classes.root} >
+
+			<Chart data={data} rotated height={400} >
 				<ArgumentAxis />
 				<ValueAxis />
 
-				<BarSeries valueField='population' argumentField='year' />
-				<Title text='World population' />
+				<BarSeries valueField='cost' argumentField='month' />
+				<Title textComponent={() => <div>
+					<span>Customer Acquisition Cost</span>
+<div>$12.95</div>
+<div>30 Day Average</div>
+				</div>}/>
 				<Animation />
 			</Chart>
 		</Paper>

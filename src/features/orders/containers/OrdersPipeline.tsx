@@ -78,7 +78,7 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
       <div className={classes.chartWrapper}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
+            <BarChart height={240}/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             {/* <PieChart /> */}

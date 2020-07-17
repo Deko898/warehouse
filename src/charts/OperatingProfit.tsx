@@ -6,12 +6,10 @@ import {
   ValueAxis,
   LineSeries,
   Title,
-  Legend,
 } from "@devexpress/dx-react-chart-material-ui";
 import { withStyles } from "@material-ui/core/styles";
 import { Animation } from "@devexpress/dx-react-chart";
 
-import { confidence as chartData } from "./mock-data/line.mock";
 import { useStyles } from "./styles/chart.styles";
 
 const format = () => (tick: any) => tick;
@@ -30,7 +28,34 @@ const TitleText: any = withStyles(titleStyles)(({ classes, ...props }: any) => (
   <Title.Text {...props} className={classes.title} />
 ));
 
-export const LineChart: React.FunctionComponent = () => {
+const chartData: any = [
+    {
+      month: 'May', profit: -4, operating: 56,
+    }, {
+      month: 'Jun', profit: 14, operating: 49,
+    }, {
+      month: 'Jul', profit: 9, operating: 57,
+    }, {
+      month: 'Aug', profit: 6, operating: 54,
+    }, {
+      month: 'Sep', profit: 15, operating: 49,
+    }, {
+      month: 'Oct', profit: 12, operating: 52,
+    }, {
+      month: 'Nov', profit: 7, operating: 61,
+    }, {
+      month: 'Dec', profit: 14, operating: 47,
+    }, {
+      month: 'Jan', profit: 3, operating: 63,
+    }, {
+      month: 'Feb', profit: 17, operating: 58,
+    }, {
+      month: 'Mar', profit: 13, operating: 59,
+    }, {
+      month: 'Apr', profit: -2, operating: 51
+    }, 
+  ];
+export const OperatingProfit: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
@@ -39,15 +64,10 @@ export const LineChart: React.FunctionComponent = () => {
         <ArgumentAxis tickFormat={format} />
         <ValueAxis labelComponent={ValueLabel} />
 
-        <LineSeries name="TV news" valueField="tvNews" argumentField="year" />
-        <LineSeries name="Church" valueField="church" argumentField="year" />
-        <LineSeries
-          name="Military"
-          valueField="military"
-          argumentField="year"
-        />
+        <LineSeries name="Profit Margin" valueField="profit" argumentField="month"/>
+        <LineSeries name="Operating Margin" valueField="operating" argumentField="month" />
+
         <Title
-          text={`Orders line`}
           textComponent={TitleText}
         />
         <Animation />

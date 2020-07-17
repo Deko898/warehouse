@@ -21,11 +21,14 @@ const data: any[] = [
   { year: "2010", population: 6.93 },
 ];
 
-export const BarChart: React.FunctionComponent = () => {
+interface IBarChart {
+  height: number
+}
+export const BarChart: React.FunctionComponent<IBarChart> = ({height}: IBarChart) => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Chart data={data} height={240}>
+      <Chart data={data} height={height}>
         <ArgumentAxis />
         <ValueAxis />
 
