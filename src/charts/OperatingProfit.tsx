@@ -7,7 +7,6 @@ import {
 	LineSeries,
 	Title,
 } from '@devexpress/dx-react-chart-material-ui';
-import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
 
 import { useStyles } from './styles/chart.styles';
@@ -16,12 +15,6 @@ const format = () => (tick: any) => tick;
 const ValueLabel = (props: any) => {
 	const { text } = props;
 	return <ValueAxis.Label {...props} text={`${text}%`} />;
-};
-
-const titleStyles: any = {
-	title: {
-		whiteSpace: 'pre',
-	},
 };
 
 const TitleText = () => (

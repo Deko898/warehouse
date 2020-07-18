@@ -2,10 +2,13 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import useStyles from './insights.styles';
 import { BarChart } from "../../charts/Bar";
-import { SideBySideStacked } from "../../charts/SideBySideStackedBar";
 import { LineChart } from "../../charts/Line";
 import { OperatingProfit } from "../../charts/OperatingProfit";
 import { CustomerCost } from "../../charts/CustomerCost";
+import { CustomerSideBySide } from '../../charts/CustomerSideBySide';
+import { RevenueProjectionBar } from '../../charts/RevenueProjectionBar';
+import FinansicalStats from '../../charts/FinansicalStats';
+import { NetIncomeProjectionBar } from '../../charts/NetIncomeProjectionBar';
 
 export default function Insights() {
 	const classes = useStyles();
@@ -15,7 +18,7 @@ export default function Insights() {
 				<Grid item xs={12} sm={7} md={7}>
 					<Grid container  spacing={1}>
 						<Grid item xs={12} sm={7} md={7}>
-							<BarChart height={240}/>
+							<RevenueProjectionBar />
 						</Grid>
 						<Grid item xs={12} sm={5} md={5}>
 							<BarChart height={240}/>
@@ -24,10 +27,10 @@ export default function Insights() {
 
 					<Grid container  spacing={1}>
 						<Grid item xs={12} sm={4} md={4}>
-							<BarChart height={240}/>
+							<FinansicalStats />
 						</Grid>
 						<Grid item xs={12} sm={8} md={8}>
-							<BarChart height={240}/>
+							<NetIncomeProjectionBar />
 						</Grid>
 					</Grid>
 				</Grid>
@@ -37,7 +40,7 @@ export default function Insights() {
 			</Grid>
 			<Grid container spacing={1}>
 				<Grid item xs={12} sm={6} md={3}>
-					<SideBySideStacked />
+					<CustomerSideBySide />
 				</Grid>
 				<Grid item xs={12} sm={6} md={3}>
 					{/* <PieChart /> */}

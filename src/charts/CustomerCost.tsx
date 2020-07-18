@@ -31,7 +31,23 @@ export const CustomerCost: React.FunctionComponent = () => {
 					textComponent={() => (
 						<div>
 							<span>Customer Acquisition Cost</span>
-							<div style={{ fontSize: '25px', fontWeight: 'bold' }}>$12.95</div>
+							<div style={{ fontSize: '25px', fontWeight: 'bold' }}>
+								$12.95
+								<span
+									style={{
+										marginLeft: '5px',
+										fontSize: '14px',
+										color: '#33bcbc',
+									}}
+								>
+									<i
+										className='fa fa-caret-up'
+										aria-hidden='true'
+										style={{ verticalAlign: 'middle' }}
+									></i>
+									4%
+								</span>
+							</div>
 							<div>30 Day Average</div>
 						</div>
 					)}

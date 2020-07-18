@@ -29,8 +29,8 @@ export const BarChart: React.FunctionComponent<IBarChart> = ({height}: IBarChart
   return (
     <Paper className={classes.root}>
       <Chart data={data} height={height}>
-        <ArgumentAxis />
-        <ValueAxis />
+        <ArgumentAxis showLine={true} />
+        <ValueAxis showLine={true} />
 
         <BarSeries valueField="population" argumentField="year" />
         <Title text="Orders Chronological" />

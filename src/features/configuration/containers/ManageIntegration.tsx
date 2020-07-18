@@ -8,7 +8,6 @@ import {
 import React from "react";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import {
-  configurationRoutes,
   availableIntegrations,
 } from "../routes/ConfigurationRoutes";
 import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";
