@@ -1,8 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import useStyles from './insights.styles';
-import { BarChart } from "../../charts/Bar";
-import { LineChart } from "../../charts/Line";
 import { OperatingProfit } from "../../charts/OperatingProfit";
 import { CustomerCost } from "../../charts/CustomerCost";
 import { CustomerSideBySide } from '../../charts/CustomerSideBySide';
@@ -10,6 +8,8 @@ import { RevenueProjectionBar }  from '../../charts/RevenueProjectionBar';
 import FinansicalStats from '../../charts/FinansicalStats';
 import { NetIncomeProjectionBar } from '../../charts/NetIncomeProjectionBar';
 import { CashBalanceLine } from '../../charts/CashBalanceLine';
+import { RevenueByType } from '../../charts/RevenueByType';
+import { PayrollByDepartment } from '../../charts/PayrollByDepartment';
 
 export default function Insights() {
 	const classes = useStyles();
@@ -36,7 +36,7 @@ export default function Insights() {
 					</Grid>
 				</Grid>
 				<Grid item xs={12} sm={5} md={5}>
-					<BarChart height={480}/>
+					<RevenueByType />
 				</Grid>
 			</Grid>
 			<Grid container spacing={1}>
@@ -45,7 +45,7 @@ export default function Insights() {
 				</Grid>
 				<Grid item xs={12} sm={6} md={3}>
 					{/* <PieChart /> */}
-					<LineChart />
+					<PayrollByDepartment />
 				</Grid>
 				<Grid item xs={12} sm={6} md={3}>
 					<OperatingProfit />
