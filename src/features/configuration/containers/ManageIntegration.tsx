@@ -9,9 +9,9 @@ import {
 import React from "react";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import {
-  configureRoutes,
+  configurationRoutes,
   availableIntegrations,
-} from "../routes/ConfigureRoutes";
+} from "../routes/ConfigurationRoutes";
 import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";
 import { CardContent, Card, Grid } from "@material-ui/core";
 import useOrderStyles from "../../orders/containers/OrdersStyles";

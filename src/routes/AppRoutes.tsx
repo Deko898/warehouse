@@ -1,7 +1,8 @@
 import Orders from "../features/orders/containers/Orders";
 import { IconType } from "../common/enums/IconType.enum";
 import ComingSoon from "../common/components/ComingSoon/ComingSoon";
-import Configure from "../features/configure/containers/Configure";
+import Configuration from "../features/configuration/containers/Configuration";
+import Insights from "../features/insights/Insights";
 
 const Routes = [
   {
@@ -43,7 +44,7 @@ const Routes = [
   {
     path: "insights",
     name: "Insights",
-    component: ComingSoon,
+    component: Insights,
     iconType: IconType.PRODUCTS,
   },
   {
@@ -54,8 +55,8 @@ const Routes = [
   },
   {
     path: "config",
-    name: "Config",
-    component: Configure,
+    name: "Configuration",
+    component: Configuration,
     iconType: IconType.CONFIG,
   },
 ];
