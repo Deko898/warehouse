@@ -17,8 +17,11 @@ export const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             alignItems: 'center',
             '& p': {
-                marginLeft: theme.spacing(2),
-                color: theme.palette.secondary.main
+                marginLeft: '4px',
+                color: theme.palette.secondary.main,
+                marginBottom: '-37px',
+                fontSize: '10px',
+                marginTop: '0'
             }
         },
         menuButton: {

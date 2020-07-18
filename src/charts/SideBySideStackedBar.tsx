@@ -17,7 +17,7 @@ export const SideBySideStacked: React.FunctionComponent = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Chart data={data} height={400}>
+      <Chart data={data} height={240}>
         <ArgumentAxis />
         <ValueAxis />
 
