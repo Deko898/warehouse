@@ -8,7 +8,7 @@ import Crm from "../containers/Crm/Crm";
 import Gateways from "../containers/Gateways/Gateways";
 import OtherThings from "../containers/OtherThings/OtherThings";
 
-export const configureRoutes = [
+export const configurationRoutes = [
     {
       id: "1",
       name: "Integrations",

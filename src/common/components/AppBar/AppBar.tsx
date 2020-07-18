@@ -37,7 +37,7 @@ const AppHeader: React.FC<IProps> = ({ logout, handleDrawerToggleSm }) => {
                 src="https://app.3linx.com/public/images/3linx-logo.png"
                 alt="3linx"
               />
-              <p>Part of the 3LINX Fulfillment Network</p>
+              <p>part of the <a href="https://www.3linx.com/">3LINX Fulfillment Network</a></p>
             </div>
             <IconButton
               color="secondary"

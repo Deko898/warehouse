@@ -6,7 +6,7 @@ import {
     Switch,
   } from "react-router-dom";
   import React from "react";
-  import { configureRoutes } from "../routes/ConfigureRoutes";
+  import { configurationRoutes } from "../routes/ConfigurationRoutes";
   import useOrderStyles from "../../orders/containers/OrdersStyles";
   import AppTabs from "../../../common/components/AppBar/AppTabs";
   
@@ -14,12 +14,12 @@ import {
     const classes = useOrderStyles();
     return (
       <div className={classes.ordersPiplineContainer}>
-        <AppTabs routes={configureRoutes} />
+        <AppTabs routes={configurationRoutes} />
         <Switch>
           <Route exact path={match.path}>
             {<Redirect to={`${match.path}/integrations`} />}
           </Route>
-          {configureRoutes.map((route: any) => (
+          {configurationRoutes.map((route: any) => (
             <Route
               path={`${match.path}${route.path}`}
               key={route.path}

@@ -6,7 +6,6 @@ import {
   ValueAxis,
   LineSeries,
   Title,
-  Legend,
 } from "@devexpress/dx-react-chart-material-ui";
 import { withStyles } from "@material-ui/core/styles";
 import { Animation } from "@devexpress/dx-react-chart";

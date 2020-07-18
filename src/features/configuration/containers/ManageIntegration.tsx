@@ -3,15 +3,13 @@ import {
   Redirect,
   withRouter,
   RouteComponentProps,
-  Switch,
   useRouteMatch,
 } from "react-router-dom";
 import React from "react";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import {
-  configureRoutes,
   availableIntegrations,
-} from "../routes/ConfigureRoutes";
+} from "../routes/ConfigurationRoutes";
 import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";
 import { CardContent, Card, Grid } from "@material-ui/core";
 import useOrderStyles from "../../orders/containers/OrdersStyles";

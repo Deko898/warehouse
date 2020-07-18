@@ -9,7 +9,6 @@ import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTab
 import { orderPipelineRoutes } from "../routes/OrdersRoutes";
 import { Grid, Card, CardContent } from "@material-ui/core";
 import { BarChart } from "../../../charts/Bar";
-import { PieChart } from "../../../charts/Pie";
 import { DoughnutChart } from "../../../charts/Doughnut";
 import { LineChart } from "../../../charts/Line";
 import { SideBySideStacked } from "../../../charts/SideBySideStackedBar";
@@ -38,7 +37,6 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
     const lp = location.pathname.split("/");
     lp.splice(lp.length - 1, 1);
     breadcrumbs = lp.join("/");
-    console.log(breadcrumbs)
   }
   return (
     <div>
@@ -78,7 +76,7 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
       <div className={classes.chartWrapper}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
-            <BarChart />
+            <BarChart height={240}/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             {/* <PieChart /> */}
