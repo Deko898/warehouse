@@ -34,7 +34,7 @@ export const LineChart: React.FunctionComponent = () => {
 
   return (
     <Paper className={classes.root}>
-      <Chart data={chartData} height={400}>
+      <Chart data={chartData} height={240}>
         <ArgumentAxis tickFormat={format} />
         <ValueAxis labelComponent={ValueLabel} />
 
