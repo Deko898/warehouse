@@ -6,9 +6,10 @@ import { LineChart } from "../../charts/Line";
 import { OperatingProfit } from "../../charts/OperatingProfit";
 import { CustomerCost } from "../../charts/CustomerCost";
 import { CustomerSideBySide } from '../../charts/CustomerSideBySide';
-import { RevenueProjectionBar } from '../../charts/RevenueProjectionBar';
+import { RevenueProjectionBar }  from '../../charts/RevenueProjectionBar';
 import FinansicalStats from '../../charts/FinansicalStats';
 import { NetIncomeProjectionBar } from '../../charts/NetIncomeProjectionBar';
+import { CashBalanceLine } from '../../charts/CashBalanceLine';
 
 export default function Insights() {
 	const classes = useStyles();
@@ -21,7 +22,7 @@ export default function Insights() {
 							<RevenueProjectionBar />
 						</Grid>
 						<Grid item xs={12} sm={5} md={5}>
-							<BarChart height={240}/>
+						<CashBalanceLine />
 						</Grid>
 					</Grid>
 

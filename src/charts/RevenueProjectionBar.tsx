@@ -8,7 +8,7 @@ import {
   ValueAxis,
 } from "@devexpress/dx-react-chart-material-ui";
 
-import { Animation } from "@devexpress/dx-react-chart";
+import { Animation, LineSeries, ValueScale } from "@devexpress/dx-react-chart";
 import { useStyles } from "./styles/chart.styles";
 
 const data: any[] = [
@@ -43,13 +43,21 @@ export const RevenueProjectionBar: React.FunctionComponent = () => {
   return (
     <Paper className={classes.root}>
       <Chart data={data} height={240}>
+             <ValueScale name="revenue" />
         <ArgumentAxis showLine={true} />
-        <ValueAxis showLine={true} />
+        <ValueAxis showLine={true}/>
 
         <BarSeries valueField="revenue" argumentField="month" color='#33bcbc' />
+        <LineSeries
+            name="Revenue"
+            valueField="revenue"
+            argumentField="month"
+            scaleName="revenue"
+           />
         <Title textComponent={textComponent} />
         <Animation />
       </Chart>
     </Paper>
   );
 };
+
