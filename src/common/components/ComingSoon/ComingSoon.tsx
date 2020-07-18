@@ -4,7 +4,6 @@ import { Grid } from '@material-ui/core';
 import { LineChart } from '../../../charts/Line';
 import { SideBySideStacked } from '../../../charts/SideBySideStackedBar';
 import { BarChart } from '../../../charts/Bar';
-import { DoughnutChart } from '../../../charts/Doughnut';
 import { CustomerCost } from '../../../charts/CustomerCost';
 import { OperatingProfit } from '../../../charts/OperatingProfit';
 
@@ -13,8 +12,8 @@ export default function ComingSoon() {
 	return (
 		<div className={classes.chartWrapper}>
 			<Grid container spacing={2}>
-				<Grid container spacing={1} xs={12} sm={7} md={7}>
-					<Grid container spacing={1} className={classes.paddingRow}>
+				<Grid item xs={12} sm={7} md={7}>
+					<Grid container  spacing={1}>
 						<Grid item xs={12} sm={7} md={7}>
 							<BarChart height={240}/>
 						</Grid>
@@ -23,7 +22,7 @@ export default function ComingSoon() {
 						</Grid>
 					</Grid>
 
-					<Grid container spacing={1} className={classes.paddingRow}>
+					<Grid container  spacing={1}>
 						<Grid item xs={12} sm={4} md={4}>
 							<BarChart height={240}/>
 						</Grid>

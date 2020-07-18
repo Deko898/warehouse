@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             color: '#fff',
             '& text': {
                 fill: '#fff'
-            }
+            },
         },
     })
 );

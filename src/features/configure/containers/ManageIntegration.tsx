@@ -3,13 +3,11 @@ import {
   Redirect,
   withRouter,
   RouteComponentProps,
-  Switch,
   useRouteMatch,
 } from "react-router-dom";
 import React from "react";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import {
-  configureRoutes,
   availableIntegrations,
 } from "../routes/ConfigureRoutes";
 import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";

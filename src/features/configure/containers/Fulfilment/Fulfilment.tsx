@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { useStyles } from "./fullfilment.styles";
 import CardWithImage from "../../components/Card/Card";
 

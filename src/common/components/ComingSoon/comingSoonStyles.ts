@@ -15,9 +15,6 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core";
 
 const useComingSoonStyles = makeStyles((theme: Theme) =>
     createStyles({
-        paddingRow: {
-            padding: theme.spacing(1, 1),
-        },
         chartWrapper: {
             paddingBottom: theme.spacing(2),
         }

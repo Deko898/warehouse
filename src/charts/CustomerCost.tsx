@@ -7,8 +7,8 @@ import {
 	ArgumentAxis,
 	ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
-import { Animation, LineSeries } from '@devexpress/dx-react-chart';
-import { useStyles } from "./styles/chart.styles";
+import { Animation } from '@devexpress/dx-react-chart';
+import { useStyles } from './styles/chart.styles';
 
 const data: any = [
 	{ month: 'May', cost: 12.5 },
@@ -21,18 +21,21 @@ const data: any = [
 export const CustomerCost: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
-		<Paper className={classes.root} >
-
-			<Chart data={data} rotated height={400} >
+		<Paper className={classes.root}>
+			<Chart data={data} rotated height={400}>
 				<ArgumentAxis />
 				<ValueAxis />
 
 				<BarSeries valueField='cost' argumentField='month' />
-				<Title textComponent={() => <div>
-					<span>Customer Acquisition Cost</span>
-<div>$12.95</div>
-<div>30 Day Average</div>
-				</div>}/>
+				<Title
+					textComponent={() => (
+						<div>
+							<span>Customer Acquisition Cost</span>
+							<div style={{ fontSize: '25px', fontWeight: 'bold' }}>$12.95</div>
+							<div>30 Day Average</div>
+						</div>
+					)}
+				/>
 				<Animation />
 			</Chart>
 		</Paper>

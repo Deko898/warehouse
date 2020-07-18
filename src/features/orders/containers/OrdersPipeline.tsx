@@ -9,7 +9,6 @@ import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTab
 import { orderPipelineRoutes } from "../routes/OrdersRoutes";
 import { Grid, Card, CardContent } from "@material-ui/core";
 import { BarChart } from "../../../charts/Bar";
-import { PieChart } from "../../../charts/Pie";
 import { DoughnutChart } from "../../../charts/Doughnut";
 import { LineChart } from "../../../charts/Line";
 import { SideBySideStacked } from "../../../charts/SideBySideStackedBar";
