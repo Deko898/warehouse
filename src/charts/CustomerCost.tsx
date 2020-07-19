@@ -22,7 +22,7 @@ export const CustomerCost: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={data} rotated height={400}>
+			<Chart data={data} rotated height={340}>
 				<ArgumentAxis />
 				<ValueAxis />
 

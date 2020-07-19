@@ -62,7 +62,7 @@ export const PayrollByDepartment: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={data} height={400}>
+			<Chart data={data} height={340}>
 				<ArgumentAxis />
 				<ValueAxis />
 

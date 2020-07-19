@@ -87,7 +87,7 @@ export const OperatingProfit: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={chartData} height={400}>
+			<Chart data={chartData} height={340}>
 				<ArgumentAxis tickFormat={format} />
 				<ValueAxis labelComponent={ValueLabel} />
 

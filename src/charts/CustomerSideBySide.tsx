@@ -49,7 +49,7 @@ export const CustomerSideBySide: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={population} height={400}>
+			<Chart data={population} height={340}>
 				<ArgumentAxis />
 				<ValueAxis />
 
