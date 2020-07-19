@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import { withRouter } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { useStyles } from "./fileUpload.styles";
+import DropZone from "../../../../common/components/DropZone/DropZone";
 
 function CreateOrder() {
   const classes = useStyles();
+
+  const handleFileDrop = (e: any) => {
+    console.log(fileInputRef.current, "EEE");
+    // fileInputRef.current
+    fileInputRef.current.files = e;
+  };
+
+  const fileInputRef: any = useRef();
+
   return (
     <div className={classes.uploadContainer}>
       <div className={classes.uploadContent}>
@@ -17,13 +27,19 @@ function CreateOrder() {
         </span>
       </div>
       <div className={classes.uploadContent}>
-        <input id="contained-input-file" type="file" accept=".xls,.xlsx,.csv" />
         <input
+          id="contained-input-file"
+          type="file"
           accept=".xls,.xlsx,.csv"
+          ref={fileInputRef}
+        />
+        {/* <input
+          accept=".xls,.xlsx,.csv"
+          ref={fileInputRef}
           className={classes.input}
           id="contained-button-file"
           type="file"
-        />
+        /> */}
         <label htmlFor="contained-button-file">
           <Button
             size="small"
@@ -44,12 +60,15 @@ function CreateOrder() {
             variant="contained"
             component="span"
             className={classes.button}
-            startIcon={<i className="fa fa-cloud-download" aria-hidden="true"></i>}
+            startIcon={
+              <i className="fa fa-cloud-download" aria-hidden="true"></i>
+            }
           >
             Download Templete
           </Button>
         </label>
       </div>
+      <DropZone handleFileDrop={handleFileDrop} />
     </div>
   );
 }
