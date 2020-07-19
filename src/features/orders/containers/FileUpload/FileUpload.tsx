@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { useStyles } from "./fileUpload.styles";
 
@@ -36,13 +36,19 @@ function CreateOrder() {
             Upload
           </Button>
         </label>
-      </div>
 
-      <div className={classes.uploadContent}>
-        <Link to="">
-          <i className="fa fa-folder" aria-hidden="true"></i>
-          <span className={classes.mLeft}>Download: Orders Templete.xlsx</span>
-        </Link>
+        <label htmlFor="contained-button-file" className={classes.mLeft}>
+          <Button
+            size="small"
+            color="secondary"
+            variant="contained"
+            component="span"
+            className={classes.button}
+            startIcon={<i className="fa fa-upload" aria-hidden="true"></i>}
+          >
+            Download Templete
+          </Button>
+        </label>
       </div>
     </div>
   );

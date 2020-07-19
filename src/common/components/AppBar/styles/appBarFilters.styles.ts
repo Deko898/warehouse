@@ -17,6 +17,9 @@ export const useStyles = makeStyles((theme: Theme) =>
         }
       }
     },
+    childMargin: {
+      marginLeft: theme.spacing(2)
+    }
   })
 );
 

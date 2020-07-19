@@ -11,12 +11,11 @@ import {
 import { Stack, Animation } from "@devexpress/dx-react-chart";
 
 import { population as data } from "./mock-data/sideBySideDemoData";
-import { useStyles } from "./styles/chart.styles";
 
 export const SideBySideStacked: React.FunctionComponent = () => {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
-    <Paper className={classes.root}>
+    <Paper >
       <Chart data={data} height={240}>
         <ArgumentAxis />
         <ValueAxis />

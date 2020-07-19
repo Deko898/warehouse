@@ -92,44 +92,6 @@ const OrderLookup: React.FunctionComponent = () => {
               <FormControl
                 className={classes.formControl}
                 size="small"
-                color="secondary"
-                variant="outlined"
-              >
-                <InputLabel id="clients-outlined-label">Clients</InputLabel>
-                <Select
-                  labelId="clients-outlined-label"
-                  id="clients-outlined"
-                  placeholder="Clients"
-                  value={age}
-                  onChange={handleChange}
-                  label="Clients"
-                >
-                  <MenuItem value={10}>All Clients</MenuItem>
-                  <MenuItem value={20}>Client</MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl
-                className={classes.formControl}
-                size="small"
-                defaultValue={10}
-                color="secondary"
-                variant="outlined"
-              >
-                <InputLabel id="dc-outlined-label">DC's</InputLabel>
-                <Select
-                  labelId="dc-outlined-label"
-                  id="dc-outlined"
-                  value={age}
-                  onChange={handleChange}
-                  label="DC's"
-                >
-                  <MenuItem value={10}>All DC's</MenuItem>
-                </Select>
-              </FormControl>
-
-              <FormControl
-                className={classes.formControl}
-                size="small"
                 defaultValue={10}
                 color="secondary"
                 variant="outlined"

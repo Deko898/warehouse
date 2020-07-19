@@ -30,6 +30,7 @@ export const Inbox: React.FunctionComponent<IProps> = ({
       disablePadding: false,
       label: "Sys",
     },
+    {id: "icon", numeric: false, disablePadding: false, label: ""},
     { id: "orderNumber", numeric: true, disablePadding: false, label: "Order" },
     { id: "dc", numeric: true, disablePadding: false, label: "DC" },
     {
@@ -65,6 +66,7 @@ export const Inbox: React.FunctionComponent<IProps> = ({
       isLink: true,
       path: "/orders/details/",
     },
+    {id: 'icon'},
     { id: "orderNumber" },
     { id: "dc" },
     {
@@ -84,7 +86,6 @@ export const Inbox: React.FunctionComponent<IProps> = ({
     { id: "status" },
     { id: "action" },
   ];
-
   return (
     <React.Fragment>
       {isLoading ? (

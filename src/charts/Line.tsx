@@ -11,7 +11,6 @@ import { withStyles } from "@material-ui/core/styles";
 import { Animation } from "@devexpress/dx-react-chart";
 
 import { confidence as chartData } from "./mock-data/line.mock";
-import { useStyles } from "./styles/chart.styles";
 
 const format = () => (tick: any) => tick;
 
@@ -30,10 +29,10 @@ const TitleText: any = withStyles(titleStyles)(({ classes, ...props }: any) => (
 ));
 
 export const LineChart: React.FunctionComponent = () => {
-  const classes = useStyles();
+  //const classes = useStyles();
 
   return (
-    <Paper className={classes.root}>
+    <Paper >
       <Chart data={chartData} height={240}>
         <ArgumentAxis tickFormat={format} />
         <ValueAxis labelComponent={ValueLabel} />

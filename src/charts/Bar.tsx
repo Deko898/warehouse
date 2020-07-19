@@ -9,7 +9,6 @@ import {
 } from "@devexpress/dx-react-chart-material-ui";
 
 import { Animation } from "@devexpress/dx-react-chart";
-import { useStyles } from "./styles/chart.styles";
 
 const data: any[] = [
   { year: "1950", population: 2.525 },
@@ -25,9 +24,9 @@ interface IBarChart {
   height: number
 }
 export const BarChart: React.FunctionComponent<IBarChart> = ({height}: IBarChart) => {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
-    <Paper className={classes.root}>
+    <Paper>
       <Chart data={data} height={height}>
         <ArgumentAxis showLine={true} />
         <ValueAxis showLine={true} />

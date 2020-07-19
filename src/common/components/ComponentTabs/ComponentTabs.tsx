@@ -3,6 +3,7 @@ import { withRouter, RouteComponentProps, Link } from "react-router-dom";
 import { Tabs, Tab } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import { useStyles } from "./componentTabs.style";
+import SearchBar from "./SearchBar";
 
 interface IProps extends RouteComponentProps {
   routes: any[];
@@ -60,6 +61,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
             ></Tab>
           );
         })}
+        <Tab component={SearchBar} ></Tab>
       </Tabs>
       {withDivider && <Divider light />}
     </React.Fragment>

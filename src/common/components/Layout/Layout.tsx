@@ -95,13 +95,12 @@ export default function Layout(props: Props) {
               <Avatar alt="D" src={user.avatar} />
             </div>
           )}
-          <div
+          {/* <div
             className={
               open ? classes.navigationLabel : classes.collapsedNavigationLabel
             }
           >
-            Navigation
-          </div>
+          </div> */}
           <NavigationBar />
           <div className={classes.drawerFooter}>
             <Fab
