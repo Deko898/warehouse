@@ -33,6 +33,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
   withDivider = false,
 }) => {
   const [value, setValue] = useState(0);
+  const classes = useStyles();
   const handleRoute = (e: any, newValue: any) => {
 		setValue(newValue);
   };
@@ -50,6 +51,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
         onChange={handleRoute}
         variant="scrollable"
         scrollButtons="auto"
+        className={classes.root}
       >
         {routes.map((r) => {
           return (

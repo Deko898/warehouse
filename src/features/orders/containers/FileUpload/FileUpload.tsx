@@ -44,7 +44,7 @@ function CreateOrder() {
             variant="contained"
             component="span"
             className={classes.button}
-            startIcon={<i className="fa fa-upload" aria-hidden="true"></i>}
+            startIcon={<i className="fa fa-cloud-download" aria-hidden="true"></i>}
           >
             Download Templete
           </Button>

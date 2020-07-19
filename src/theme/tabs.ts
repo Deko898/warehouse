@@ -7,7 +7,7 @@ export const MuiTabs = {
         },
         "& .MuiTabs-indicator": {
             backgroundColor: palette.primary.main,
-            top: 0
+            //top: 0
         }
     },
 }
