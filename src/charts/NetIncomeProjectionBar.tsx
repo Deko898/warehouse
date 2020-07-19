@@ -42,7 +42,7 @@ export const NetIncomeProjectionBar: React.FunctionComponent = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Chart data={data} height={240}>
+      <Chart data={data} height={250}>
         <ArgumentAxis showLine={true} />
         <ValueAxis showLine={true} />
 

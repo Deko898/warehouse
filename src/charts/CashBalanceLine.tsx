@@ -59,7 +59,7 @@ export const CashBalanceLine: React.FunctionComponent = () => {
 
   return (
     <Paper className={classes.root}>
-      <Chart data={confidence} height={240}>
+      <Chart data={confidence} height={250}>
         <ArgumentAxis tickFormat={format} />
         <ValueAxis labelComponent={ValueLabel} />
 

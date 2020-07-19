@@ -111,7 +111,7 @@ export const RevenueByType: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={data} height={483}>
+			<Chart data={data} height={516}>
 				<ArgumentAxis />
 				<ValueAxis />
 

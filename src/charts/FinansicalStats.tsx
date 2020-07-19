@@ -38,7 +38,7 @@ export default function FinansicalStats() {
   const classes = useStyles();
   const fClasses = useFinansicalStyles();
   return (
-    <Card className={classes.root} style={{height: '240px'}}>
+    <Card className={classes.root} style={{height: '250px'}}>
         <CardHeader title="Finansical Stats"/>
       <CardContent>
         <Typography variant="h6">

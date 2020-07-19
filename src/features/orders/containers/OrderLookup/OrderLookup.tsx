@@ -5,8 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import SearchIcon from "@material-ui/icons/Search";
-import { Button, Card, CardContent } from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
+import { Button, Card, CardContent, TextField } from "@material-ui/core";
 import { MOCK_ORDERS } from "../../../../mock/orders.mock";
 import useOrderStyles from "../OrdersStyles";
 import { useStyles } from "./orderLookup.styles";
@@ -15,10 +14,6 @@ const OrderLookup: React.FunctionComponent = () => {
   const classes = useStyles();
   const orderClasses = useOrderStyles();
   const [age, setAge] = React.useState("10");
-
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as string);
-  };
 
   const headCells = [
     {
@@ -55,6 +50,7 @@ const OrderLookup: React.FunctionComponent = () => {
     { id: "status", numeric: false, disablePadding: false, label: "Status" },
     { id: "action", numeric: false, disablePadding: false, label: "Action" },
   ];
+
   const columns = [
     {
       id: "systemId",
@@ -80,6 +76,10 @@ const OrderLookup: React.FunctionComponent = () => {
     { id: "status" },
     { id: "action" },
   ];
+
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setAge(event.target.value as string);
+  };
 
   const orders = MOCK_ORDERS;
 
@@ -129,8 +129,9 @@ const OrderLookup: React.FunctionComponent = () => {
                 </Select>
               </FormControl>
               <TextField
+                className={classes.datePicker}
                 id="date"
-                label="Date Range"
+                label="Start Date"
                 type="date"
                 variant="outlined"
                 defaultValue="2017-05-24"
@@ -139,8 +140,19 @@ const OrderLookup: React.FunctionComponent = () => {
                   shrink: true,
                 }}
               />
+              <TextField
+                className={classes.datePicker}
+                id="date"
+                label="Finish Date"
+                type="date"
+                variant="outlined"
+                defaultValue="2020-05-24"
+                size="small"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
             </div>
-
             <Button
               variant="contained"
               color="primary"
