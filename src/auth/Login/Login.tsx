@@ -56,99 +56,103 @@ const Login: React.FC<IProps> = ({ logIn, isLoading, user, error }) => {
         </Carousel>
       </Hidden>
       <div className={classes.loginContentContainer}>
-        <div className={classes.logoWrapper}></div>
-        <h1>Welcome!</h1>
-        <p className={classes.loginSubHeader}>
-          We look forward to serving you!
-        </p>
-        <Formik
-          initialValues={{ email: "", password: "", rememberMe: false }}
-          onSubmit={(values) => {
-            logIn(values, history);
-          }}
-          validationSchema={validationLoginSchema}
-        >
-          {(props) => {
-            const {
-              values,
-              touched,
-              errors,
-              isValid,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-            } = props;
-            return (
-              <form className={classes.formWrapper} onSubmit={handleSubmit}>
-                <TextField
-                  required
-                  id="email"
-                  label="Email"
-                  type="email"
-                  variant="outlined"
-                  size="small"
-                  name="email"
-                  error={errors.email && touched.email}
-                  helperText={errors.email && touched.email && errors.email}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.email}
-                />
-                <TextField
-                  required
-                  id="password"
-                  label="Password"
-                  name="password"
-                  type="password"
-                  variant="outlined"
-                  size="small"
-                  error={errors.password && touched.password}
-                  helperText={
-                    errors.password && touched.password && errors.password
-                  }
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.password}
-                />
-                <div className={classes.lastFormRowWrapper}>
-                  <FormControlLabel
-                    control={<BlueCheckbox name="rememberMe" />}
-                    id="rememberMe"
-                    label="Remember Me"
-                    name="rememberMe"
+        <div></div>
+        <div>
+          <div className={classes.logoWrapper}></div>
+          <h1>Welcome!</h1>
+          <p className={classes.loginSubHeader}>
+            We look forward to serving you!
+          </p>
+          <Formik
+            initialValues={{ email: "", password: "", rememberMe: false }}
+            onSubmit={(values) => {
+              logIn(values, history);
+            }}
+            validationSchema={validationLoginSchema}
+          >
+            {(props) => {
+              const {
+                values,
+                touched,
+                errors,
+                isValid,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+              } = props;
+              return (
+                <form className={classes.formWrapper} onSubmit={handleSubmit}>
+                  <TextField
+                    required
+                    id="email"
+                    label="Email"
+                    type="email"
+                    variant="outlined"
+                    size="small"
+                    name="email"
+                    error={errors.email && touched.email}
+                    helperText={errors.email && touched.email && errors.email}
+                    onBlur={handleBlur}
                     onChange={handleChange}
-                    value={values.rememberMe}
+                    value={values.email}
                   />
-                  {error && (
-                    <FormHelperText error={true}>{error}</FormHelperText>
-                  )}
-                  <ErrorMessage
-                    name="invalidRequest"
-                    component="div"
-                    className="invalid-feedback"
+                  <TextField
+                    required
+                    id="password"
+                    label="Password"
+                    name="password"
+                    type="password"
+                    variant="outlined"
+                    size="small"
+                    error={errors.password && touched.password}
+                    helperText={
+                      errors.password && touched.password && errors.password
+                    }
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.password}
                   />
-                  <Link
-                    component="button"
-                    variant="body2"
-                    onClick={() => {
-                      console.info("I'm a button.");
-                    }}
+                  <div className={classes.lastFormRowWrapper}>
+                    <FormControlLabel
+                      control={<BlueCheckbox name="rememberMe" />}
+                      id="rememberMe"
+                      label="Remember Me"
+                      name="rememberMe"
+                      onChange={handleChange}
+                      value={values.rememberMe}
+                    />
+                    {error && (
+                      <FormHelperText error={true}>{error}</FormHelperText>
+                    )}
+                    <ErrorMessage
+                      name="invalidRequest"
+                      component="div"
+                      className="invalid-feedback"
+                    />
+                    <Link
+                      component="button"
+                      variant="body2"
+                      onClick={() => {
+                        console.info("I'm a button.");
+                      }}
+                    >
+                      Forgot Password?
+                    </Link>
+                  </div>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    disabled={!isValid || isLoading}
                   >
-                    Forgot Password?
-                  </Link>
-                </div>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  disabled={!isValid || isLoading}
-                >
-                  Sign me in
-                </Button>
-              </form>
-            );
-          }}
-        </Formik>
+                    Sign me in
+                  </Button>
+                </form>
+              );
+            }}
+          </Formik>
+        </div>
+
         <div className={classes.formFooter}>
           <p>
             Copyright © 2020 3LINX Unified Commerce, LLC | All Rights Reserved

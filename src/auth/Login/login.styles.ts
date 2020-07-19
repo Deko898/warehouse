@@ -47,9 +47,10 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             width: '500px',
             minWidth: '500px',
             padding: theme.spacing(7),
+            paddingBottom: 0,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             flex: '0 !important',
             '& h1': {
                 margin: 0,
@@ -101,8 +102,6 @@ export const useLoginStyles = makeStyles((theme: Theme) =>
             width: '100%',
             textAlign: 'center',
             borderTop: `1px solid ${theme.palette.background.default}`,
-            position: 'relative',
-            top: '30%',
             '& p': {
                 color: '#899297',
                 fontSize: '14px'
