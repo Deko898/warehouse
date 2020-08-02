@@ -7,14 +7,13 @@ import {
 	BarSeries,
 	Title,
 } from '@devexpress/dx-react-chart-material-ui';
-
 import { Stack, Animation } from '@devexpress/dx-react-chart';
-
 import { useStyles } from './styles/chart.styles';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const textComponent: any = () => (
 	<div>
-		<div>New vs Churned Customers</div>
+		{/* <div>New vs Churned Customers</div> */}
 		<div style={{ fontSize: '25px', fontWeight: 'bold' }}>42</div>
 		<div>Net New Customers MTD</div>
 	</div>
@@ -49,6 +48,8 @@ export const CustomerSideBySide: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
+			<CardHeader title="New vs Churned Customers"/>
+
 			<Chart data={population} height={340}>
 				<ArgumentAxis />
 				<ValueAxis />

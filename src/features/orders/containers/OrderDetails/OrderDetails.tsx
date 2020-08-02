@@ -24,6 +24,8 @@ import Loader from "../../../../common/components/Loader/Loader";
 import LeafletMap from "../../../../common/components/Map/Map";
 import { fetchOrderDetailsRequestAction } from "../../../../store/modules/order-details/actions";
 import { IAppState } from "../../../../store/app-state.interface";
+import MatTable from "../../../../common/components/Table/Table";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 interface IProps {
   fetchOrderDetails: Function;
@@ -41,6 +43,32 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
   const classes = useOrderStyles();
   const contentClasses = useCardContentStyles();
   const handleItemClick = () => {};
+
+  const headCells = [
+    { id: "index", numeric: false, disablePadding: false, label: "" },
+    { id: "sku", numeric: true, disablePadding: false, label: "Sku" },
+    { id: "qty", numeric: true, disablePadding: false, label: "Qty" },
+  ];
+
+  const columns = [
+    {
+      id: "index",
+    },
+    { id: "sku" },
+    { id: "qty" },
+  ];
+
+  const shippingHeadCells = [
+    { id: "index", numeric: true, disablePadding: false, label: "" },
+    { id: "boxId", numeric: true, disablePadding: false, label: "BoxID" },
+    { id: "tracking", numeric: false, disablePadding: false, label: "Tracking" },
+    { id: "weight", numeric: true, disablePadding: false, label: "Weight" },
+    { id: "cost", numeric: true, disablePadding: false, label: "Cost" },
+    { id: "status", numeric: false, disablePadding: false, label: "Status" },
+    { id: "label", numeric: false, disablePadding: false, label: "Label" },
+  ];
+
+  const shippingColumns = shippingHeadCells.map((c) => ({ id: c.id }));
 
   React.useEffect(() => {
     const [systemId] = location.pathname.split("/").reverse();
@@ -281,7 +309,22 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
                   title="Order Detail"
                   subheader={`(SKU=${orderDetails.details.sku} | ShipinsValue=${orderDetails.details.shippingsValue} | Est.Wt=${orderDetails.details.estWt})`}
                 />
-                <CardContent className={contentClasses.root}></CardContent>
+                <CardContent className={contentClasses.root}>
+                  <div
+                    style={{
+                      marginTop: "16px",
+                    }}
+                  >
+                    <MatTable
+                      rows={orderDetails.details.rows}
+                      headCells={headCells}
+                      keyField="sku"
+                      columns={columns}
+                      displayPagination={false}
+                      showCheckbox={false}
+                    />
+                  </div>
+                </CardContent>
               </Card>
             </Grid>
             <Grid item xs={12} md={8}>
@@ -290,7 +333,22 @@ const OrderDetails: React.FunctionComponent<IProps> = ({
                   title="Shipping Detail"
                   subheader={`${orderDetails.shippingDetail.boxes} Boxes | Total Weight = ${orderDetails.shippingDetail.totalWeight} | Total Shipping Cost = $ ${orderDetails.shippingDetail.totalShippingCost} | Total Cube = ${orderDetails.shippingDetail.totalCube} Cu.Feet.`}
                 />
-                <CardContent className={contentClasses.root}></CardContent>
+                <CardContent className={contentClasses.root}>
+                  <div
+                    style={{
+                      marginTop: "16px",
+                    }}
+                  >
+                    <MatTable
+                      rows={orderDetails.shippingDetail.rows}
+                      headCells={shippingHeadCells}
+                      keyField="boxId"
+                      columns={shippingColumns}
+                      displayPagination={false}
+                      showCheckbox={false}
+                    />
+                  </div>
+                </CardContent>
               </Card>
             </Grid>
           </Grid>

@@ -9,11 +9,17 @@ import { Button, Card, CardContent, TextField } from "@material-ui/core";
 import { MOCK_ORDERS } from "../../../../mock/orders.mock";
 import useOrderStyles from "../OrdersStyles";
 import { useStyles } from "./orderLookup.styles";
+import DateRangePicker from "react-bootstrap-daterangepicker";
+import moment from "moment";
 
 const OrderLookup: React.FunctionComponent = () => {
   const classes = useStyles();
   const orderClasses = useOrderStyles();
-  const [age, setAge] = React.useState("10");
+  const [carriers, setCarriers] = React.useState("10");
+  const [shipMethod, setShipMethod] = React.useState("10");
+  const [selectedRange, setSelectedRange] = React.useState(
+    `${moment().subtract(6, "days").format("MM/DD/YYYY")} - ${moment().format("MM/DD/YYYY")}`
+  );
 
   const headCells = [
     {
@@ -77,8 +83,36 @@ const OrderLookup: React.FunctionComponent = () => {
     { id: "action" },
   ];
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as string);
+  const datePickerInitialSettings: any = {
+    endDate: moment(),
+    ranges: {
+      Today: [moment(), moment()],
+      Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+      "Last 7 Days": [moment().subtract(6, "days"), moment()],
+      "Last 30 Days": [moment().subtract(29, "days"), moment()],
+      "This Month": [moment().startOf("month"), moment().endOf("month")],
+      "Last Month": [
+        moment().subtract(1, "month").startOf("month"),
+        moment().subtract(1, "month").endOf("month"),
+      ],
+    },
+    startDate: moment().subtract(6, "days"),
+  };
+
+  const handleCarriers = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCarriers(event.target.value as string);
+  };
+
+  const handleShipMethods = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setShipMethod(event.target.value as string);
+  };
+
+  const handleApply = (e: any, picker: any) => {
+    setSelectedRange(
+      `${picker.startDate.format("MM/DD/YYYY")} - ${picker.endDate.format(
+        "MM/DD/YYYY"
+      )}`
+    );
   };
 
   const orders = MOCK_ORDERS;
@@ -100,8 +134,8 @@ const OrderLookup: React.FunctionComponent = () => {
                 <Select
                   labelId="carriers-outlined-label"
                   id="carriers-outlined"
-                  value={age}
-                  onChange={handleChange}
+                  value={carriers}
+                  onChange={handleCarriers}
                   label="Carriers"
                 >
                   <MenuItem value={10}>All Carriers</MenuItem>
@@ -121,37 +155,39 @@ const OrderLookup: React.FunctionComponent = () => {
                 <Select
                   labelId="ship-methods-outlined-label"
                   id="ship-methods-outlined"
-                  value={age}
-                  onChange={handleChange}
+                  value={shipMethod}
+                  onChange={handleShipMethods}
                   label="Ship Methods"
                 >
                   <MenuItem value={10}>All Ship Methods</MenuItem>
                 </Select>
               </FormControl>
-              <TextField
-                className={classes.datePicker}
-                id="date"
-                label="Start Date"
-                type="date"
-                variant="outlined"
-                defaultValue="2017-05-24"
-                size="small"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-              <TextField
-                className={classes.datePicker}
-                id="date"
-                label="Finish Date"
-                type="date"
-                variant="outlined"
-                defaultValue="2020-05-24"
-                size="small"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
+
+              <DateRangePicker
+                initialSettings={datePickerInitialSettings}
+                onApply={handleApply}
+              >
+                {/* <input type="text" /> */}
+                <div
+                  id="reportrange"
+                  style={{
+                    background: "#fff",
+                    border: "1px solid #ccc",
+                    cursor: "pointer",
+                    padding: "5px 10px",
+                    flex: 1,
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderColor: "rgba(0, 0, 0, 0.23)",
+                  }}
+                >
+                  <i className="fa fa-calendar" />
+                  <span>{selectedRange}</span>
+                  <i className="fa fa-caret-down" />
+                </div>
+              </DateRangePicker>
             </div>
             <Button
               variant="contained"
@@ -166,6 +202,7 @@ const OrderLookup: React.FunctionComponent = () => {
           rows={orders}
           headCells={headCells}
           keyField="systemId"
+          showCheckbox={true}
           columns={columns}
         />
       </CardContent>

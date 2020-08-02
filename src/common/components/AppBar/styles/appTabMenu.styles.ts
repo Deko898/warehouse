@@ -9,7 +9,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: "14px",
       borderRadius: "unset",
       color: theme.palette.secondary.main,
-      fontWeight: 'bold',
       "& .MuiListItem-root": {
         color: theme.palette.secondary.main,
       },

@@ -28,14 +28,9 @@ const DropZone = ({ handleFileDrop }: IProps) => {
   const fileDrop = (e: any) => {
     e.preventDefault();
     const files = e.dataTransfer.files;
+    handleEnteredState(false);
     handleFileDrop(files);
   };
-
-  //   classNames({
-  //     'btn': true,
-  //     'btn-pressed': this.state.isPressed,
-  //     'btn-over': !this.state.isPressed && this.state.isHovered
-  //   })
 
   return (
     <div className={classes.container}>

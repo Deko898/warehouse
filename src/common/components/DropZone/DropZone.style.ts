@@ -14,12 +14,11 @@ export const useStyles = makeStyles((theme: Theme) =>
             alignItems: 'center',
             justifyContent: 'center',
             margin: 0,
-            width: '600px',
             height: '150px',
-            border: `4px dashed ${theme.palette.primary.dark}`
+            border: `4px solid ${theme.palette.primary.dark}`
         },
         dragEnter: {
-            border: `4px dashed ${theme.palette.primary.light}`
+            border: `4px solid ${theme.palette.primary.light}`
         },
         // uploadIcon: {
         //     width: '50px',

@@ -31,7 +31,7 @@ const AppHeader: React.FC<IProps> = ({ logout, handleDrawerToggleSm }) => {
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
         <Grid container className={gridClasses.container}>
-          <Grid item xs={12} sm={4} md={6} className={gridClasses.root}>
+          <Grid item xs={12} sm={12} md={6} className={gridClasses.root}>
             <div className={classes.logoWrapper}>
               <img
                 src="https://app.3linx.com/public/images/3linx-logo.png"
@@ -49,7 +49,7 @@ const AppHeader: React.FC<IProps> = ({ logout, handleDrawerToggleSm }) => {
               <MenuIcon />
             </IconButton>
           </Grid>
-          <Grid item xs={12} sm={8} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <div className={classes.filtersWrapper}>
               <Filters />
               <StyledMenuWithIcon

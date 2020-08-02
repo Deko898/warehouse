@@ -21,7 +21,13 @@ export const useStyles = makeStyles((theme: Theme) =>
                 color: theme.palette.secondary.main,
                 marginBottom: '-37px',
                 fontSize: '10px',
-                marginTop: '0'
+                marginTop: '0',
+                '& a': {
+                    color: theme.palette.secondary.main,
+                },
+                [theme.breakpoints.down("sm")]: {
+                    marginBottom: '-33px',
+                },
             }
         },
         menuButton: {
@@ -38,7 +44,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             "& img": {
                 height: "44px",
             },
-            [theme.breakpoints.down("xs")]: {
+            [theme.breakpoints.down("sm")]: {
                 padding: theme.spacing(2),
                 "& img": {
                     height: "40px",
@@ -48,7 +54,7 @@ export const useStyles = makeStyles((theme: Theme) =>
         filtersWrapper: {
             display: "flex",
             alignItems: "center",
-            [theme.breakpoints.down("xs")]: {
+            [theme.breakpoints.down("sm")]: {
                 borderTop: `1px solid ${theme.palette.background.default}`,
                 paddingTop: theme.spacing(1.5)
             },
@@ -65,7 +71,7 @@ export const useGridStyles = makeStyles((theme: Theme) => createStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
             paddingBottom: theme.spacing(1.5)
         },
     }

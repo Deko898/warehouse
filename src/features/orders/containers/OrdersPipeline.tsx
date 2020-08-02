@@ -17,10 +17,12 @@ import StyledMenuWithIcon from "../../../common/components/Sidenav/StyledMenuWit
 import {
   faCloudDownloadAlt,
   faEllipsisV,
+  faListAlt
 } from "@fortawesome/free-solid-svg-icons";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
 import AddIcon from "@material-ui/icons/Add";
 import { Button, Hidden } from "@material-ui/core";
+import SearchBar from "../../../common/components/ComponentTabs/SearchBar";
 
 const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
   match,
@@ -73,13 +75,12 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
           </div>
         </Hidden>
       </div>
-      <div className={classes.chartWrapper}>
+      {/* <div className={classes.chartWrapper}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
             <BarChart height={240}/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            {/* <PieChart /> */}
             <LineChart/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
@@ -89,14 +90,28 @@ const OrdersPipeline: React.FunctionComponent<RouteComponentProps> = ({
             <DoughnutChart />
           </Grid>
         </Grid>
-      </div>
+      </div> */}
       <Card>
         <CardContent className={classes.root}>
-          <ComponentTabs
-            routes={orderPipelineRoutes}
-            showExtraInfo={true}
-            withDivider={false}
-          />
+          <div className={classes.tabsWrapper}>
+            <ComponentTabs
+              routes={orderPipelineRoutes}
+              showExtraInfo={true}
+              withDivider={false}
+            />
+            <div className={classes.inputsCardHeaderWrapper}>
+              <StyledMenuWithIcon
+                handleItemClick={handleItemClick}
+                variant="contained"
+                color="secondary"
+                icon={faListAlt}
+                items={[{ text: "Move to Pending" },{ text: "Delete" }]}
+                text="Bulk Actions"
+              />
+              <SearchBar />
+            </div>
+          </div>
+
           <Route exact path={match.path}>
             {<Redirect to={`${match.path}/inbox`} />}
           </Route>

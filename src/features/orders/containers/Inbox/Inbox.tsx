@@ -96,10 +96,11 @@ export const Inbox: React.FunctionComponent<IProps> = ({
             rows={orders}
             headCells={headCells}
             keyField="systemId"
+            showCheckbox={true}
             columns={columns}
           />
         </PerfectScrollbar>
-      )}
+      )} 
     </React.Fragment>
   );
 };

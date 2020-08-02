@@ -10,6 +10,7 @@ import {
 import { Animation } from "@devexpress/dx-react-chart";
 
 import { useStyles } from "./styles/chart.styles";
+import CardHeader from '@material-ui/core/CardHeader';
 
 const format = () => (tick: any) => tick;
 
@@ -48,7 +49,7 @@ const ValueLabel = (props: any) => {
 
   const textComponent: any = () => (
     <div>
-        <div>Cash Balance</div>
+        {/* <div>Cash Balance</div> */}
         <div style={{ fontSize: '25px', fontWeight: 'bold' }}>$385.3k
         </div>
         <div>Curent Cash On-Hand</div>
@@ -59,6 +60,7 @@ export const CashBalanceLine: React.FunctionComponent = () => {
 
   return (
     <Paper className={classes.root}>
+      <CardHeader title="Cash Balance"/>
       <Chart data={confidence} height={250}>
         <ArgumentAxis tickFormat={format} />
         <ValueAxis labelComponent={ValueLabel} />

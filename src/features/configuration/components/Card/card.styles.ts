@@ -4,6 +4,11 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             position: 'relative',
+            // width: '200px',
+            display: 'flex',
+            flexFlow: 'column',
+            alignItems: 'center',
+            borderTop: '1px solid rgba(0, 0, 0, 0.08)',
             '&:hover': {
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             },

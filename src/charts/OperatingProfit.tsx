@@ -8,8 +8,8 @@ import {
 	Title,
 } from '@devexpress/dx-react-chart-material-ui';
 import { Animation } from '@devexpress/dx-react-chart';
-
 import { useStyles } from './styles/chart.styles';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const format = () => (tick: any) => tick;
 const ValueLabel = (props: any) => {
@@ -17,9 +17,6 @@ const ValueLabel = (props: any) => {
 	return <ValueAxis.Label {...props} text={`${text}%`} />;
 };
 
-const TitleText = () => (
-		<div>Operating/Profit Margins</div>
-);
 
 const chartData: any = [
 	{
@@ -87,6 +84,8 @@ export const OperatingProfit: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
+			<CardHeader title="Operating/Profit Margins"/>
+
 			<Chart data={chartData} height={340}>
 				<ArgumentAxis tickFormat={format} />
 				<ValueAxis labelComponent={ValueLabel} />
@@ -103,7 +102,6 @@ export const OperatingProfit: React.FunctionComponent = () => {
           color='#33bcbc'
 				/>
 
-				<Title textComponent={TitleText} />
 				<Animation />
 			</Chart>
 		</Paper>

@@ -34,7 +34,28 @@ const useOrdersStyles = makeStyles((theme: Theme) =>
         },
         chartWrapper: {
             paddingBottom: theme.spacing(2),
-        }
+        },
+        titleAvaliable: {
+            borderBottom: `1px solid ${theme.palette.primary.main}`,
+            marginTop: theme.spacing(2)
+        },
+        tabsWrapper: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            [theme.breakpoints.down("md")]: {
+                flexFlow: 'column',
+                alignItems: 'unset'
+            },
+        },
+        inputsCardHeaderWrapper: {
+            display: 'flex',
+            alignItems: 'center',
+            marginRight: theme.spacing(1),
+            [theme.breakpoints.down("md")]: {
+                margin: theme.spacing(1.5)
+            },
+        },
     })
 );
 export default useOrdersStyles;

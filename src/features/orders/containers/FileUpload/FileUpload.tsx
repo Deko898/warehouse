@@ -3,17 +3,26 @@ import { withRouter } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { useStyles } from "./fileUpload.styles";
 import DropZone from "../../../../common/components/DropZone/DropZone";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function CreateOrder() {
   const classes = useStyles();
+  const fileInputRef: any = useRef();
+  const [files, setFiles] = React.useState([]);
 
-  const handleFileDrop = (e: any) => {
-    console.log(fileInputRef.current, "EEE");
-    // fileInputRef.current
-    fileInputRef.current.files = e;
+  const handleFileDrop = (files: any) => {
+    fileInputRef.current.files = files;
+    setFiles(Array.from(files));
   };
 
-  const fileInputRef: any = useRef();
+  const fileSelectHandler = (e: any) => {
+    setFiles(Array.from(e.target.files));
+  };
+
+  const removeFile = (fileName: string) => {
+    const newFiles = files.filter((f) => f.name !== fileName);
+    setFiles(newFiles);
+  };
 
   return (
     <div className={classes.uploadContainer}>
@@ -26,49 +35,64 @@ function CreateOrder() {
           Upload a batch file of Orders. ( Excel (xls,xlsx,csv) Format Only)
         </span>
       </div>
-      <div className={classes.uploadContent}>
+      <div className={classes.uploadDropzoneContent}>
         <input
           id="contained-input-file"
           type="file"
-          accept=".xls,.xlsx,.csv"
+          multiple
+          style={{ display: "none" }}
           ref={fileInputRef}
+          onChange={(e) => fileSelectHandler(e)}
         />
-        {/* <input
-          accept=".xls,.xlsx,.csv"
-          ref={fileInputRef}
-          className={classes.input}
-          id="contained-button-file"
-          type="file"
-        /> */}
-        <label htmlFor="contained-button-file">
-          <Button
-            size="small"
-            color="primary"
-            variant="contained"
-            component="span"
-            className={classes.button}
-            startIcon={<i className="fa fa-upload" aria-hidden="true"></i>}
+        <DropZone handleFileDrop={handleFileDrop} />
+        <div className={classes.filesContainer}>
+          <div
+            onClick={() => fileInputRef.current.click()}
+            className={classes.browseContainer}
           >
-            Upload
-          </Button>
-        </label>
+            <span>browse</span>
+          </div>
+          <div>
+            {files.map((f) => (
+              <div key={f.name} className={classes.fileItem}>
+                <span>{f.name}</span>
+                <DeleteIcon onClick={() => removeFile(f.name)} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={classes.buttonsWrapper}>
+          <label htmlFor="contained-button-file" style={{
+            marginRight:'8px'
+          }}>
+            <Button
+              size="small"
+              color="primary"
+              variant="contained"
+              component="span"
+              className={classes.button}
+              startIcon={<i className="fa fa-upload" aria-hidden="true"></i>}
+            >
+              Upload
+            </Button>
+          </label>
 
-        <label htmlFor="contained-button-file" className={classes.mLeft}>
-          <Button
-            size="small"
-            color="secondary"
-            variant="contained"
-            component="span"
-            className={classes.button}
-            startIcon={
-              <i className="fa fa-cloud-download" aria-hidden="true"></i>
-            }
-          >
-            Download Templete
-          </Button>
-        </label>
+          <label htmlFor="contained-button-file">
+            <Button
+              size="small"
+              color="secondary"
+              variant="contained"
+              component="span"
+              className={classes.button}
+              startIcon={
+                <i className="fa fa-cloud-download" aria-hidden="true"></i>
+              }
+            >
+              Download Templete
+            </Button>
+          </label>
+        </div>
       </div>
-      <DropZone handleFileDrop={handleFileDrop} />
     </div>
   );
 }

@@ -63,7 +63,7 @@ const ComponentTabs: React.FunctionComponent<IProps> = ({
             ></Tab>
           );
         })}
-        <Tab component={SearchBar} ></Tab>
+        {/* <Tab component={SearchBar} ></Tab> */}
       </Tabs>
       {withDivider && <Divider light />}
     </React.Fragment>

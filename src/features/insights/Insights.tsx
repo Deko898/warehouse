@@ -45,7 +45,6 @@ export default function Insights() {
           <CustomerSideBySide />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          {/* <PieChart /> */}
           <PayrollByDepartment />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>

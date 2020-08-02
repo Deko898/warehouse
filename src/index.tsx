@@ -10,6 +10,8 @@ import "font-awesome/css/font-awesome.css";
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'leaflet/dist/leaflet.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-daterangepicker/daterangepicker.css';
 
 ReactDOM.render(
   <MuiThemeProvider theme={muiTheme}>

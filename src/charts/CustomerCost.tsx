@@ -9,6 +9,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { Animation } from '@devexpress/dx-react-chart';
 import { useStyles } from './styles/chart.styles';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const data: any = [
 	{ month: 'May', cost: 12.5 },
@@ -22,6 +23,8 @@ export const CustomerCost: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
+			<CardHeader title="Customer Acquisition Cost"/>
+
 			<Chart data={data} rotated height={340}>
 				<ArgumentAxis />
 				<ValueAxis />
@@ -30,7 +33,7 @@ export const CustomerCost: React.FunctionComponent = () => {
 				<Title
 					textComponent={() => (
 						<div>
-							<span>Customer Acquisition Cost</span>
+							{/* <span>Customer Acquisition Cost</span> */}
 							<div style={{ fontSize: '25px', fontWeight: 'bold' }}>
 								$12.95
 								<span

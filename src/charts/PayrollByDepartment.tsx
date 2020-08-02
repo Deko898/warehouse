@@ -8,8 +8,8 @@ import {
 	Title,
 } from '@devexpress/dx-react-chart-material-ui';
 import { Stack, Animation } from '@devexpress/dx-react-chart';
-
 import { useStyles } from './styles/chart.styles';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const data = [
 	{
@@ -51,7 +51,7 @@ const data = [
 
 const textComponent: any = () => (
     <div>
-        <div>Payroll by Department</div>
+        {/* <div>Payroll by Department</div> */}
         <div style={{ fontSize: '25px', fontWeight: 'bold' }}>61%
         </div>
         <div>Total Payroll as % of Revenue</div>
@@ -62,6 +62,8 @@ export const PayrollByDepartment: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
+			<CardHeader title="Payroll by Department"/>
+
 			<Chart data={data} height={340}>
 				<ArgumentAxis />
 				<ValueAxis />

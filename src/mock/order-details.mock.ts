@@ -62,13 +62,27 @@ export const ORDER_DETAILS_MOCK: any = {
             sku: 5,
             quantity: 6,
             shippingsValue: 0,
-            estWt: 25.55
+            estWt: 25.55,
+            rows: [{
+                sku: '5',
+                qty: '6',
+                index: '1'
+            }]
         },
         shippingDetail: {
             boxes: 2,
             totalWeight: '32 LBS',
             totalShippingCost: 0,
-            totalCube: 4.5
+            totalCube: 4.5,
+            rows: [{
+                boxId: 5,
+                tracking: '',
+                weight: 100,
+                cost: 10,
+                status: '',
+                label: '',
+                index: '1'
+            }]
         },
         orderLocationCoordinates: [
             {
@@ -149,13 +163,15 @@ export const ORDER_DETAILS_MOCK: any = {
             sku: 5,
             quantity: 6,
             shippingsValue: 0,
-            estWt: 25.55
+            estWt: 25.55,
+            rows: []
         },
         shippingDetail: {
             boxes: 2,
             totalWeight: '32 LBS',
             totalShippingCost: 0,
-            totalCube: 4.5
+            totalCube: 4.5,
+            rows: []
         },
         orderLocationCoordinates: [
             {
@@ -236,13 +252,15 @@ export const ORDER_DETAILS_MOCK: any = {
             sku: 5,
             quantity: 6,
             shippingsValue: 0,
-            estWt: 25.55
+            estWt: 25.55,
+            rows: []
         },
         shippingDetail: {
             boxes: 2,
             totalWeight: '32 LBS',
             totalShippingCost: 0,
-            totalCube: 4.5
+            totalCube: 4.5,
+            rows: []
         },
         orderLocationCoordinates: [
             {
@@ -323,13 +341,15 @@ export const ORDER_DETAILS_MOCK: any = {
             sku: 5,
             quantity: 6,
             shippingsValue: 0,
-            estWt: 25.55
+            estWt: 25.55,
+            rows: []
         },
         shippingDetail: {
             boxes: 2,
             totalWeight: '32 LBS',
             totalShippingCost: 0,
-            totalCube: 4.5
+            totalCube: 4.5,
+            rows: []
         },
         orderLocationCoordinates: [
             {

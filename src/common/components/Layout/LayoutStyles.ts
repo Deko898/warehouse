@@ -38,6 +38,9 @@ export const useStyles = makeStyles((theme: Theme) =>
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.enteringScreen,
             }),
+            [theme.breakpoints.down("sm")]: {
+                top: "137px",
+            },
         },
         drawerClose: {
             top: "64px",
@@ -49,6 +52,9 @@ export const useStyles = makeStyles((theme: Theme) =>
             width: theme.spacing(7) + 1,
             [theme.breakpoints.up("sm")]: {
                 width: theme.spacing(6) + 2
+            },
+            [theme.breakpoints.down("sm")]: {
+                top: "137px",
             },
         },
         drawerToolbar: {
@@ -73,6 +79,9 @@ export const useStyles = makeStyles((theme: Theme) =>
             position: "absolute",
             bottom: "117px",
             right: "20px",
+            [theme.breakpoints.down("sm")]: {
+                bottom: "187px",
+            },
         },
         footerBtn: {
             position: "fixed",
@@ -93,7 +102,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(0, 2),
             marginTop: "64px",
             overflow: 'hidden',
-            [theme.breakpoints.down("xs")]: {
+            [theme.breakpoints.down("sm")]: {
                 marginTop: "137px",
             },
         },

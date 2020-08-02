@@ -62,7 +62,6 @@ export default function Layout(props: Props) {
               <div className={classes.userJobTitle}>Frontend Developer</div>
             </div>
           </div>
-          <div className={classes.navigationLabel}>Navigation</div>
           <NavigationBar />
         </Drawer>
       </Hidden>
@@ -87,7 +86,7 @@ export default function Layout(props: Props) {
               <Avatar alt="D" src={user.avatar} />
               <div className={classes.userInfo}>
                 <div>{user.fullName}</div>
-                <div className={classes.userJobTitle}>{user.jobTitle}</div>
+                <div className={classes.userJobTitle}>3Linx Unified Commerce</div>
               </div>
             </div>
           ) : (

@@ -10,6 +10,7 @@ import {
 
 import { Animation } from "@devexpress/dx-react-chart";
 import { useStyles } from "./styles/chart.styles";
+import CardHeader from '@material-ui/core/CardHeader';
 
 const data: any[] = [
   { month: "Jan", revenue: 60000 },
@@ -28,7 +29,7 @@ const data: any[] = [
 
 const textComponent: any = () => (
     <div>
-        <div>Net Income vs Projection</div>
+        {/* <div>Net Income vs Projection</div> */}
         <div style={{ fontSize: '25px', fontWeight: 'bold' }}>$270.5k
             <span style={{marginLeft:'5px', fontSize:'14px', color: '#33bcbc'}}>
             <i className="fa fa-caret-up" aria-hidden="true" style={{verticalAlign: 'middle'}}></i>
@@ -42,6 +43,8 @@ export const NetIncomeProjectionBar: React.FunctionComponent = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
+      <CardHeader title="Net Income vs Projection"/>
+
       <Chart data={data} height={250}>
         <ArgumentAxis showLine={true} />
         <ValueAxis showLine={true} />

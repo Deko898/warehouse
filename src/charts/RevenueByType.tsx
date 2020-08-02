@@ -10,6 +10,7 @@ import {
 import { Stack, Animation } from '@devexpress/dx-react-chart';
 
 import { useStyles } from './styles/chart.styles';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const data = [
 	{
@@ -100,7 +101,7 @@ const data = [
 
 const textComponent: any = () => (
     <div>
-        <div>Revenue by Type</div>
+        {/* <div>Revenue by Type</div> */}
         <div style={{ fontSize: '25px', fontWeight: 'bold' }}>$5.24M
         </div>
         <div>12 Month Trailing Revenue</div>
@@ -111,7 +112,9 @@ export const RevenueByType: React.FunctionComponent = () => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.root}>
-			<Chart data={data} height={516}>
+			<CardHeader title="Revenue by Type"/>
+
+			<Chart data={data} height={556}>
 				<ArgumentAxis />
 				<ValueAxis />
 

@@ -7,9 +7,7 @@ import {
 } from "react-router-dom";
 import React from "react";
 import AppBreadcrumbs from "../../../common/components/BreadCrumbs/BreadCrumbs";
-import {
-  availableIntegrations,
-} from "../routes/ConfigurationRoutes";
+import { availableIntegrations } from "../routes/ConfigurationRoutes";
 import ComponentTabs from "../../../common/components/ComponentTabs/ComponentTabs";
 import { CardContent, Card, Grid } from "@material-ui/core";
 import useOrderStyles from "../../orders/containers/OrdersStyles";
@@ -19,6 +17,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import CardWithImage from "../components/Card/Card";
 
 const ManageIntegration: React.FunctionComponent<RouteComponentProps> = ({
   match,
@@ -28,53 +27,44 @@ const ManageIntegration: React.FunctionComponent<RouteComponentProps> = ({
   return (
     <>
       <AppBreadcrumbs breadcrumbs={path} />
+      <h2 className={classes.titleAvaliable}>Active Connectors (2)</h2>
+
       <Grid container spacing={2}>
-        <Grid item>
-          <Card style={{ width: "200px" }}>
-            <CardHeader
-              style={{ height: "90px", background: "red" }}
-              avatar={
-                <IconButton aria-label="add to favorites">
-                  <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                </IconButton>
-              }
-              title="e c w id"
-            />
-            <CardActions>
-              <Button size="small" color="primary">
-                Settings
-              </Button>
-              <Button size="small" color="primary">
-                Disable
-              </Button>
-            </CardActions>
-          </Card>
+        <Grid item md={2}>
+          <CardWithImage isComingSoon={false}>
+            {{
+              actions: (
+                <>
+                  <Button size="small" color="primary" variant="outlined">
+                    Settings
+                  </Button>
+                  <Button size="small" color="secondary" variant="outlined">
+                    Disable
+                  </Button>
+                </>
+              ),
+            }}
+          </CardWithImage>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Card style={{ width: "200px" }}>
-            <CardHeader
-              style={{ height: "90px" }}
-              avatar={
-                <Avatar aria-label="recipe">
-                  <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                  </IconButton>
-                </Avatar>
-              }
-              title="e c w id"
-            />
-            <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions>
-          </Card>
+
+        <Grid item sm={4} md={2}>
+          <CardWithImage isComingSoon={false}>
+            {{
+              actions: (
+                <>
+                  <Button size="small" color="primary" variant="outlined">
+                    Settings
+                  </Button>
+                  <Button size="small" color="secondary" variant="outlined">
+                    Disable
+                  </Button>
+                </>
+              ),
+            }}
+          </CardWithImage>
         </Grid>
       </Grid>
-      <h2>Available Integrations</h2>
+      <h2 className={classes.titleAvaliable}>Available Connectors (11)</h2>
       <Card>
         <CardContent className={classes.root}>
           <ComponentTabs
